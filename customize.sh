@@ -7,6 +7,10 @@ ui_print "*           v1.0.0             *"
 ui_print "*******************************"
 sleep 1
 ui_print "Important : Android 14 & 13 (SDK 34 & 33) is needed for Full Vulkan 1.4 - It will work on lower versions too but not with the full experience"
+sleep 2
+ui_print "Working On SnapDragon Only (Until Now)"
+sleep 2
+ui_print "If You Come From DT Module You Must Uninstall it first then Flash SuperMario Tweaker"
 sleep 3
 ui_print " "
 ui_print "🔧 Applying Tweaks (0/14)..."
@@ -139,8 +143,8 @@ rm -rf /data/dalvik-cache
 rm -rf /cache/dalvik-cache
 sleep 2
 ui_print "- [14/14] Done"
-sleep 
-ui_print " "
+ui_print "If you got any things like sh: bad number don't worry everyting is working well"
+sleep 2
 ui_print "✅ Tweaks Applied Successfully!"
 sleep 1
 ui_print " "

@@ -1,7 +1,9 @@
 # SuperMario Tweaker  
-v1.0.1
+v1.0.0
 
 ## Changelog
+
+### Supporting SnapDragon only (Until Now)
 
 ### System Tweaks
 - Limited Dropbox logs to save space.

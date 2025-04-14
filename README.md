@@ -4,7 +4,9 @@
   
 **A tweaker module that can improve any device performance and stability (Gaming, Daily Useage, etc....)**
 
-**Working on all devices**
+**Working on SnapDragon Only (Until Now)**
+
+**If You Come From DT Module You Must Uninstall it first then Flash SuperMario Tweaker**
 
 <br />
 
@@ -31,7 +33,7 @@
 - Full Doze mode enabled + whitelisted SystemUI
 - Enabled dex2oat64 for 64-bit performance
 - Dalvik heap tuning based on available RAM
-- Disabled rotator downscale (Qualcomm only)
+- Disabled rotator downscale
 - Disabled RAM dumps, logs, and unused system services
 - Killed background activity for Traceur, Feedback, Joyose, and similar apps
 
