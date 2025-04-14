@@ -1,6 +1,6 @@
 # SuperMario Tweaker
 
-<div align="center"><img src="SMTW-banner.jpg">
+<div align="center"><img src="SMTW-Banner.jpg">
   
 **A tweaker module that can improve any device performance and stability (Gaming, Daily Useage, etc....)**
 
