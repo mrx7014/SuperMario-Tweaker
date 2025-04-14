@@ -37,7 +37,7 @@
 
 ### NOTES :
 
-### Important : Android 14 (SDK 34) is needed for Full Vulkan 1.4 - Mesa Turnip support
+### Important : Android 14 & 13 (SDK 34 & 33) is needed for Full Vulkan 1.4 - It will work on lower versions too but not with the full experience
 ### Turnip is an open-source vulkan driver for devices with Adreno 6xx-7xx GPUs.
 
 # App Compatibility with Vulkan 1.4 - Mesa Turnip
