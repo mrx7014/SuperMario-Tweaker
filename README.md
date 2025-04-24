@@ -4,13 +4,11 @@
   
 **A tweaker module that can improve any device performance and stability (Gaming, Daily Useage, etc....)**
 
-**Working on SnapDragon Only (Until Now)**
-
 **If You Come From DT Module You Must Uninstall it first then Flash SuperMario Tweaker**
 
 <br />
 
-# V1.0.0 Released
+# V2.0.0 Released
 
 </div>
 

@@ -1,67 +1,95 @@
-# SuperMario Tweaker  
-v1.0.0
+# SuperMario Tweaker V2.0.0 - Changelog
 
-## Changelog
+## New Additions – SuperMario-Tweaker.sh Script
 
-### Supporting SnapDragon only (Until Now)
+### 1. Battery & Device Idle Tweaks:
+- Enabled full device idle mode for better deep sleep.
+- Whitelisted essential system UI to prevent interference.
+- Tuned `device_idle_constants` for aggressive battery saving without sacrificing usability.
+- Enabled aggressive battery saver and adaptive battery features.
 
-### System Tweaks
-- Limited Dropbox logs to save space.
-- Turned off ANR (App Not Responding) debugging.
-- Enabled Freeform window support.
-- Enabled color enhancement for display.
-- Enabled signature spoofing (for apps that need it).
-- **Modified call properties** such as the ringtone delay and the number of ringtone repetitions to improve call stability.
-- **Increased GPU buffer count** to enhance graphics performance.
-- **Enabled HW composition for SurfaceFlinger** to improve UI performance.
-- **Disabled SurfaceFlinger back pressure** for smoother interaction with the system UI.
-- **Enabled OpenGL ES 3D hardware acceleration** to improve graphics.
-- **Disabled recompute crop change in SurfaceFlinger** to improve graphics performance.
-- **Disabled buffer age** in the GPU for increased efficiency.
-- **Enabled latch unsignaled buffers** even if the fences haven't signaled yet.
-- **Disabled LTE RAM dump** to free up more available memory.
-- **Disabled additional RAM dumps** for better memory management.
-- **Disabled kill reports for processes** to improve memory performance.
-- **Disabled dirty regions in graphics rendering** for smoother UI.
-- **Disabled V-Sync** to improve responsiveness.
-- **Configured dynamic composition** (between CPU and GPU) for better performance.
+### 2. System Settings Optimizations:
+- Disabled unnecessary debugging and ANR mechanisms.
+- Enabled freeform window support and fake signature allowance.
+- Enabled display color enhancement for better visuals.
 
-### Thermal Tweaks
-- Reconfigured thermal engine policies for better balance between performance and heat control.
-- Disabled over-aggressive CPU core hotplugging at moderate temperatures to reduce unnecessary throttling.
-- Increased CPU thermal thresholds to delay throttling and maintain smoother performance under load.
-- Optimized thermal response for gaming (PUBG, SGame) by adjusting thermal configuration files to prevent early performance drops.
-- Tweaked LCD thermal monitoring to reduce aggressive brightness dimming.
-- Adjusted battery charging thermal limits to avoid slow charging from minor temperature rises.
-- Reduced CPU frequency capping for thermal sensors that previously limited performance too early.
-- Maintained emergency shutdown protection at 65°C to ensure hardware safety.
+### 3. Dalvik VM & HWUI Adjustments:
+- Applied dynamic Dalvik heap settings based on total RAM (2GB–5GB).
+- Enhanced HWUI texture and cache configurations according to RAM size.
+- Enabled 64-bit dex2oat compilation if system supports it.
 
-### Mesa Turnip Vulkan Driver
+### 4. Display & Graphics Enhancements:
+- Enabled `iorapd` for faster app launching (Android 10+).
+- Applied `vendor.display.disable_rotator_downscale` for Qualcomm devices.
 
-- Update to verison 25.0.3
+### 5. App Background Restriction:
+- Disabled background access and forced stop for bloatware, logging, and telemetry apps (e.g., Traceur, GMS, Google feedback, SetupWizard).
 
-### Battery Tweaks
-- Turned on full Doze mode to save more battery.
-- Added `SystemUI` to Doze whitelist so it doesn’t get paused.
-- Enabled Adaptive Battery and Aggressive Battery Saver.
+### 6. System Clean-up:
+- Cleaned Dalvik caches on execution to ensure a fresh performance state.
 
-### App Launch Speed
-- Enabled `iorapd` to make apps open faster (Android 10+ only).
+---
 
-### Graphics Boost (Based on RAM)
-- Adjusted graphic cache sizes to make the UI smoother.
+## New Features of the Module
 
-### Memory Settings (Dalvik/ART)
-- Tuned memory settings depending on how much RAM the phone has.
-- Helps apps run better and reduces lag.
+### 1. Improve installation UI
+ - Improved UI Clarity
+ - Added Clear Separation Between Sections:
+ - Improved Progress Bar Display:
+ - Enhanced Completion Message:.
+ - Simplified Instructions:
+ - Optimized Sleep Times Between Messages:
 
-### Display Tweak (Qualcomm only)
-- Disabled rotator downscale for better display performance.
+### 2. GPU & Vulkan Boost:
+- Switched from OpenGL to Vulkan rendering for:
+  - `debug.sf.renderer`
+  - `debug.renderengine.backend`
+  - `ro.hwui.hardware.vulkan`
+  - `ro.hwui.use_vulkan`
+- Improved rendering performance, reduced latency, and better utilization of modern GPU features.
 
-### 64-bit Optimization
-- Enabled 64-bit dex2oat to speed up app installation and performance.
+### 3. Hardware Composition:
+- Changed `debug.composition.type` to `dyn` (dynamic), allowing CPU and GPU co-processing for smoother UI/UX.
 
-### Background App Restrictions
-- Blocked background activity for unneeded system apps like:
-  - Traceur, Setup Wizard, Feedback, Joyose, etc.
-- Force-stopped and disabled some of them to save resources.
+### 4. Stability & Performance Improvements:
+- Removed redundant logging and background services settings:
+  - `profiler.force_disable_err_rpt`
+  - `logcat.live`
+  - `ro.vendor.qti.sys.fw.bservice_limit`
+- Improved responsiveness and decreased RAM load.
+
+---
+
+## Removed Configurations
+
+### 1. Audio Tweaks:
+- Removed all fluency and dualmic-related properties.
+- Example:
+  - `persist.audio.fluence.voicecall`
+  - `audio.deep_buffer.media`
+
+**Reason:** Minimal benefit and resource overhead.
+
+### 2. Dalvik & Heap Tuning:
+- Outdated or redundant Dalvik properties were removed or replaced with RAM-based dynamic values.
+- Removed:
+  - `dalvik.vm.heapstartsize`
+  - `dalvik.vm.heaptargetutilization`
+
+### 3. Logging & Ramdump:
+- Removed debug settings that generate unnecessary logs or memory dumps:
+  - `persist.radio.ramdump`
+  - `persist.vendor.ssr.enable_ramdumps`
+
+### 4. Network & Telephony:
+- Removed Google location features and unused telephony tweaks:
+  - `ro.com.google.networklocation`
+  - `ro.telephony.call_ring.multiple`
+
+---
+
+**Overall Goals:**
+- Maximize battery life through deep sleep and adaptive management.
+- Boost graphics with Vulkan and better cache handling.
+- Eliminate bloat and logging for a cleaner, faster system.
+- Offer smart tweaks based on RAM for wider device compatibility.

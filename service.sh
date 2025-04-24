@@ -275,3 +275,6 @@ settings put global activity_manager_constants max_cached_processes
 
 # Stop log
 su -c "stop logd"
+
+# SuperMario-Tweaker Script
+"${MODDIR}/SuperMario-Tweaker.sh" > /dev/null

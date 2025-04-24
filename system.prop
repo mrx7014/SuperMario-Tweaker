@@ -2,7 +2,7 @@
 #V1.0.0
 ###By: MRX7014
 
-#build.prop tweaks
+# build.prop tweaks
 
 # Faster Boot Time & Power Optimization
 ro.config.hw_power_saving=1
@@ -33,67 +33,9 @@ ro.min.fling_velocity=8000
 ro.min_pointer_dur=8
 windowsmgr.max_events_per_sec=300
 
-# FPS Stabilizer & Graphics Optimization
-debug.sf.showupdates=0
-debug.sf.showbackground=0
-debug.hwui.renderer=vulkan
-debug.renderengine.backend=vulkan
-vendor.debug.renderengine.backend=vulkan
-ro.hwui.hardware.vulkan=true
-ro.hwui.use_vulkan=true
-debug.egl.hw=1
-
-# RAM Management & Performance
-ro.VISIBLE_APP_ADJ=4
-ro.HIDDEN_APP_MIN_ADJ=7
-dalvik.vm.dexopt-flags=m=y,v=n,o=v,u=n
-
 # Battery Optimization
 ro.ril.disable.power.collapse=0
 ro.ril.power_collapse=1
-
-# Audio Enhancements
-vendor.audio.media.stereo.control=0
-persist.audio.dualmic.config=endfire
-persist.audio.fluence.mode=endfire
-persist.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicecomm=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-audio.deep_buffer.media=true
-vendor.voice.conc.fallbackpath=deep-buffer
-ro.media.dec.aud.mp3.enabled=1
-ro.media.enc.aud.mp3.enabled=1
-ro.media.dec.aud.flac.enabled=1
-ro.media.enc.aud.flac.enabled=1
-ro.media.dec.aud.wma.enabled=1
-ro.media.enc.aud.wma.enabled=1
-media.aac_51_output_enabled=true
-flac.sw.decoder.24bit.support=true
-persist.audio.speaker.dualmode=true
-vendor.audio.playback.mch.downsample=true
-vendor.audio.use.sw.alac.decoder=true
-vendor.audio.use.sw.ape.decoder=true
-af.fast_track_multiplier=1
-
-# Privacy & Logging Tweaks
-ro.config.nocheckin=1
-profiler.force_disable_err_rpt=1
-profiler.force_disable_ulog=1
-logcat.live=disable
-
-# Google Services Tweaks
-ro.com.google.cdb.spa1=bsxasm1
-ro.bbt.support.circle2search=true
-ro.com.google.locationfeatures=0
-ro.com.google.networklocation=0
-
-# Streaming & Video Performance
-media.stagefright.enable-meta=true
-media.stagefright.enable-scan=true
-media.stagefright.enable-http=true
-media.stagefright.enable-rtsp=true
-media.stagefright.enable-record=false
 
 # Spoof CPU & GPU // SnapDragon 8 Elite & Adreno830
 ro.soc.model=SM8750-3-AB
@@ -115,43 +57,29 @@ debug.sf.hw=1
 # Disable surfaceflinger back pressure
 debug.sf.disable_backpressure=1
 
-# Enable OpenGL ES 3D hardware acceleration, more info at: https://android.googlesource.com/platform/frameworks/native/+/e6f43dd/opengl/libs/EGL/egl.cpp (line 262)
+# Enable OpenGL ES 3D hardware acceleration
 debug.egl.hw=1
+# More info at: https://android.googlesource.com/platform/frameworks/native/+/e6f43dd/opengl/libs/EGL/egl.cpp (line 262)
 
 # Disable recompute crop change in surfaceflinger
 debug.sf.recomputecrop=0
+# More info at: https://developer.arm.com/documentation/ka001862/latest
 
 # This causes surfaceflinger to latch buffers even if their fences haven't signaled
 debug.sf.latch_unsignaled=1
 
-# Disable LTE RAM dump
-persist.radio.ramdump=0
-
-# Disable more RAM dumps
-persist.vendor.ssr.enable_ramdumps=0
-
 # Disable unnecessary debugging
 persist.sys.lmk.reportkills=false
 
-# Disable partial invalidates, more info at: https://developer.arm.com/documentation/ka001862/latest
+# Disable partial invalidates
 debug.hwui.render_dirty_regions=false
+# More info at: https://developer.arm.com/documentation/ka001862/latest
 
 # Disable vsync
 debug.hwui.disable_vsync=true
 
-# Configure dalvik heap
-dalvik.vm.heapstartsize=16m
-dalvik.vm.heapgrowthlimit=128m
-dalvik.vm.heapsize=128m
-dalvik.vm.heapminfree=4m
-dalvik.vm.heapmaxfree=16m
-dalvik.vm.heaptargetutilization=0.75
-
 # Disable vsync for CPU rendered apps
 debug.cpurend.vsync=false
-
-# Change rendering pipeline, more info at: https://developer.arm.com/documentation/ka001862/latest
-debug.hwui.renderer=vulkan
 
 # Compose using dynamic hardware (CPU / GPU)
 debug.composition.type=dyn
@@ -163,11 +91,13 @@ ro.vendor.qti.sys.fw.bservice_limit=60
 # iorapd prop
 ro.iorapd.enable=true
 
-# Disable rotator downscale, cherrypicked from: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/e4d576deb3f25c09b2a85ef9738fad61afec6ce8#diff-331eb533fa0b3a1aaaff624db1027b418cffa5780caecf042f25ef8de935a34a
+# Disable rotator downscale
 vendor.display.disable_rotator_downscale=true
+# More info at: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/e4d576deb3f25c09b2a85ef9738fad61afec6ce8#diff-331eb533fa0b3a1aaaff624db1027b418cffa5780caecf042f25ef8de935a34a
 
-# Enable usage of dex2oat64, cherrypicked from: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/cc3ff3c5e5c5b58bfbf68729f26299e1fa2334b0#diff-331eb533fa0b3a1aaaff624db1027b418cffa5780caecf042f25ef8de935a34a
+# Enable usage of dex2oat64
 dalvik.vm.dex2oat64.enabled=true
+# More info at: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/cc3ff3c5e5c5b58bfbf68729f26299e1fa2334b0#diff-331eb533fa0b3a1aaaff624db1027b418cffa5780caecf042f25ef8de935a34a
 
-# Enable unspecialized app process pool, cherrypicked from: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/444ceb86851a673e6d40a9c74eefe7c08c10553a
+# Enable unspecialized app process pool
 persist.device_config.runtime_native.usap_pool_enabled=true
