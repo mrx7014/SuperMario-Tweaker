@@ -1,0 +1,8 @@
+Processor   : ARMv8 Processor rev 1 (v8l)
+Hardware    : Qualcomm SM8750
+Features    : fp asimd evtstrm aes pmull sha1 sha2 crc32
+CPU implementer : 0x51
+CPU architecture: 8
+CPU variant : 0x0
+CPU part    : 0x510
+CPU revision: 1

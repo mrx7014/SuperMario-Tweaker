@@ -38,8 +38,15 @@ ro.ril.disable.power.collapse=0
 ro.ril.power_collapse=1
 
 # Spoof CPU & GPU // SnapDragon 8 Elite & Adreno830
-ro.soc.model=SM8750-3-AB
-ro.gpu.model=Adreno830
+# GPU Spoof
+ro.gpu.vendor=Qualcomm
+ro.gpu.model=Adreno 830
+ro.product.manufacturer=Qualcomm
+ro.product.brand=Qualcomm
+ro.chipname=SM8750
+ro.display.series=Snapdragon 8 Elite
+ro.hardware.chipname=SM8750
+ro.board.soc.name=Snapdragon 8 Elite
 
 # GPU vulkan-capable (Use GPU instead of CPU while rendering)
 debug.composition.type=gpu
