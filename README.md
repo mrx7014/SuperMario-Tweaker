@@ -11,9 +11,13 @@
     <img src="https://img.shields.io/badge/Gaming-Boosted-red?style=flat-square&logo=nintendo-switch" alt="Gaming Boosted" />
     <img src="https://img.shields.io/badge/License-Free-lightgrey?style=flat-square&logo=open-access" alt="License" />
   </p>
+  
+  <b>Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!</b>
+  
   <br />
-  <strong>Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!</strong>
-  <strong>Working on Snapdragon only</strong>
+  
+<b>Working on Snapdragon only</b>
+  
 </div>
 
 ---
