@@ -50,8 +50,6 @@
 3. Reboot your device.  
 4. Enjoy improved performance and stability!
 
-> **Note:** Root access is required. The module auto-applies tweaks at boot — no manual steps needed.
-
 ---
 
 ## 📌 System Requirements
