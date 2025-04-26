@@ -13,22 +13,30 @@
   </p>
   <br />
   <strong>Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!</strong>
+  <strong>Working on Snapdragon only</strong>
 </div>
 
 ---
 
+
 ## 🚀 Features
 
-- Faster boot times and reduced startup lag  
-- Improved touch response and UI smoothness  
-- Stable FPS for better gaming performance  
-- Enhanced battery life with deep Doze and background control  
-- Optimized RAM management and faster app switching  
-- Full Vulkan 1.4 support (via Mesa Turnip v25.0.3)  
-- Signature spoofing and freeform window support  
-- Disabled Google bloatware and unnecessary logging  
-- SurfaceFlinger and HWUI tweaks for better UI rendering  
-- Thermal tuning to reduce overheating during heavy use  
+- **Faster boot times** & reduced startup lag  
+- **Improved touch response** & smoother UI  
+- **Stable FPS** for enhanced gaming performance  
+- **Vulkan 1.4 support** (via Mesa Turnip v25.0.3) for better graphics  
+- **Optimized RAM management** & faster app switching  
+- **Battery life improvements** with deep Doze & background control  
+- **CPU & GPU optimizations** for high performance  
+- **Game Mode** for boosted FPS and locked display to 120Hz  
+- **Signature spoofing**  
+- **Disabled Google bloatware** & unnecessary logging  
+- **Thermal tuning** to prevent overheating during heavy use  
+- **SurfaceFlinger & HWUI tweaks** for better UI rendering  
+- **Dynamic CPU-GPU composition** for smoother multitasking  
+- **Optimized app launch** & faster response with IORAPD prefetching  
+- **Enhanced gaming experience** with CPU frequency locking & video mode optimizations  
+- **Powerhint.xml Configurations** for optimized CPU & memory performance, with tuning for tasks like camera usage and video recording at different frame rates.  
 
 ---
 
