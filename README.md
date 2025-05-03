@@ -97,21 +97,6 @@
 
 ---
 
-## 📊 Performance Comparison (Real-World Results)
-
-| Scenario                     | Without Tweaks          | With SuperMario Tweaker v2.0.0 | Improvement               |
-|------------------------------|--------------------------|-------------------------------|---------------------------|
-| Boot Time                    | ~45–60 seconds           | ~25–30 seconds                | Up to 45% faster          |
-| App Launch Time (Heavy Apps) | ~2.5–3.2 seconds          | ~1.2–1.8 seconds               | Faster app response       |
-| Game FPS Stability (Medium)  | Noticeable fluctuations + heat | Stable FPS + lower temperature | Smoother and cooler gaming|
-| RAM Usage (App Switching)    | Slows after 3–4 apps     | Smooth even with 6–7 apps      | Improved RAM management   |
-| Battery Idle Drain           | ~3–4% per hour           | ~1–1.5% per hour              | Better battery standby    |
-| UI Animation Smoothness      | Minor lag/stutter        | Smooth and fast animations     | Faster UI responsiveness  |
-
-> **Note:** Results may changed depending on kernel, device, and ROM used.
-
----
-
 ## 🧑‍💻 Credits
 
 **Developed & maintained by:** MRX7014
