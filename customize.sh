@@ -1,7 +1,7 @@
 #!/system/bin/sh
 awk '{print}' "$MODPATH"/common/SuperMarioTweaker-Banner
 ui_print ""
-if [ -d "/data/adb/modules/DT"]; then
+if [ -d "/data/adb/modules/DT" ]; then
   ui_print "WARNING: DT module has been detected and it will be removed at the next reboot."
   touch /data/adb/modules/DT/remove
 fi
