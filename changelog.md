@@ -1,9 +1,10 @@
 # SuperMario Tweaker V2.0.0 - Changelog
 
-### Fixes
+### Fixes & Updates
 - Delete duplicated lines in system.prop
 - Clean code
 - Update update.json (to update module from root manager in next updates)
+- Update Mesa Turnip to v 25.1.0
 
 ## New Additions 
 
