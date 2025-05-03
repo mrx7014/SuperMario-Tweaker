@@ -12,10 +12,8 @@ ro.mot.eri.losalert.delay=1000
 ro.ril.sensor.sleep.control=1
 
 # UI & Touch Responsiveness
-persist.sys.ui.hw=1
 view.scroll_friction=10
 touch.pressure.scale=0.001
-touch.size.calibration=diameter
 touch.size.scale=1
 touch.size.bias=0
 touch.size.isSummed=0
@@ -28,8 +26,6 @@ MultitouchSettleInterval=1ms
 MultitouchMinDistance=1px
 TapInterval=1ms
 TapSlop=1px
-ro.max.fling_velocity=15000
-ro.min.fling_velocity=8000
 ro.min_pointer_dur=8
 windowsmgr.max_events_per_sec=300
 
@@ -38,15 +34,8 @@ ro.ril.disable.power.collapse=0
 ro.ril.power_collapse=1
 
 # Spoof CPU & GPU // SnapDragon 8 Elite & Adreno830
-# GPU Spoof
-ro.gpu.vendor=Qualcomm
-ro.gpu.model=Adreno 830
-ro.product.manufacturer=Qualcomm
-ro.product.brand=Qualcomm
-ro.chipname=SM8750
-ro.display.series=Snapdragon 8 Elite
-ro.hardware.chipname=SM8750
-ro.board.soc.name=Snapdragon 8 Elite
+ro.soc.model=SM8750-3-AB
+ro.gpu.model=Adreno830
 
 # GPU vulkan-capable (Use GPU instead of CPU while rendering)
 debug.composition.type=gpu
@@ -88,9 +77,6 @@ debug.hwui.disable_vsync=true
 # Disable vsync for CPU rendered apps
 debug.cpurend.vsync=false
 
-# Compose using dynamic hardware (CPU / GPU)
-debug.composition.type=dyn
-
 # Increase cached app limit (A9)
 ro.vendor.qti.sys.fw.bg_apps_limit=600
 ro.vendor.qti.sys.fw.bservice_limit=60
@@ -114,7 +100,6 @@ persist.sys.purgeable_assets=1
 ro.config.low_ram=false
 ro.kernel.android.checkjni=0
 persist.sys.zram_enabled=1
-ro.sys.fw.bg_apps_limit=32
 ro.sys.fw.trim_enable_memory=true
 dalvik.vm.verify-bytecode=false
 debug.kill_allocating_task=0
@@ -128,28 +113,19 @@ persist.sys.NV_STEREO_CONTROL=0
 persist.sys.NV_STEREO_EYES=0
 
 # GPU Optimization (Adreno)
-debug.egl.buffcount=3
 debug.egl.swapinterval=0
-debug.hwui.renderer=skiavk
 debug.hwui.use_vulkan=true
-persist.sys.ui.hw=1
-debug.sf.latch_unsignaled=1
-debug.sf.disable_backpressure=1
-debug.egl.hw=1
-debug.sf.hw=1
 ro.product.gpu.driver=1
 video.accelerate.hw=1
 debug.gr.swapinterval=0
 persist.sys.use_dithering=0
 debug.gralloc.gfx_ubwc_disable=0
-debug.composition-type=hybrid
 persist.sys.composer.preferred_mode=performance
 
 # Game Mode / High FPS
 debug.cpurend.dynamicfps=false
 debug.cpurend.fpslimit=120
 debug.cpurend.fpsmin=120
-debug.cpurend.vsync=false
 debug.gpurend.vsync=false
 debug.sf.fps=120
 debug.display.max_fps=120
@@ -172,13 +148,9 @@ ro.vendor.smart_dfps.enable=false
 persist.sys.scrollingcache=0
 ro.max.fling_velocity=30000
 ro.min.fling_velocity=12000
-ro.min_pointer_dur=8
 sys.use_fifo_ui=1
-windowsmgr.max_event_per_sec=1000
 touch.size.calibration=geometric
-touch.pressure.scale=0.001
 persist.sys.ui.hw=true
-persist.sys.force_hw_ui=true
 
 # Qualcomm Snapdragon Tweaks
 debug.qctwa.statusbar=1
@@ -209,18 +181,7 @@ debug.sf.showfps=0
 
 # More Tweaks
 debug.egl.force_msaa=false
-debug.gr.swapinterval=0
 debug.sf.swapinterval=0
-debug.hwui.disable_vsync=true
-vendor.debug.egl.swapinterval=0
-debug.sf.hw=1
-debug.sf.latch_unsignaled=1
 debug.gfx.driver=1
 persist.sys.game.turbo=0
-debug.performance.tuning=1
 debug.egl.profiler=0
-
-# Vulkan Renderer
-debug.hwui.renderer=skiavk
-debug.renderengine.backend=skiavk
-ro.hwui.use_vulkan=true

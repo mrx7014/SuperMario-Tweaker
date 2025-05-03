@@ -1,5 +1,10 @@
 # SuperMario Tweaker V2.0.0 - Changelog
 
+### Fixes
+- Delete duplicated lines in system.prop
+- Clean code
+- Update update.json (to update module from root manager in next updates)
+
 ## New Additions 
 
 ### SuperMario-Tweaker.sh Script
