@@ -1,15 +1,14 @@
 #!/system/bin/sh
 awk '{print}' "$MODPATH"/common/SuperMarioTweaker-Banner
-sleep 2
 ui_print ""
 ui_print "Important: Android 14/13 (SDK 34/33) needed for full Vulkan support."
-sleep 2
+sleep 1.5
 ui_print "Snapdragon Only"
-sleep 2
+sleep 1.5
 ui_print "Uninstall DT Module before flashing SuperMario Tweaker."
-sleep 2
+sleep 1.5
 ui_print "🔧 Applying System Enhancements (0/14)..."
-sleep 2
+sleep 1.5
 ui_print "- [1/14] Accelerating boot time & reducing startup lag for faster access... 🚀"
 sleep 1
 ui_print "- [2/14] Improving touch responsiveness & delivering a smoother, more fluid UI... ⚡"
