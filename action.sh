@@ -1,3 +1,4 @@
+#!/system/bin/sh
 MODDIR=/data/adb/modules/SMTW
 function abort() {
     echo "- $1"
