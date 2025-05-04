@@ -2,11 +2,17 @@
 
 ### Fixes & Updates
 - Delete duplicated lines in system.prop
-- Clean code
+- Clean code (thanks to @ZG089)
+- Delete DT module automatically if detected (thanks to @ZG089)
+- Improved installation UI (thanks to @ZG089)
+- Delete unnecessary audio, Dalvik, logging, and network tweaks
+- Removed duplicate `build.prop` entries
+- Reorganized tweaks for better structure
 - Update update.json (to update module from root manager in next updates)
-- Update Mesa Turnip to v 25.1.0
+- Update Mesa Turnip to v25.1.0
 
-## New Additions 
+
+## New Additions
 
 ### SuperMario-Tweaker.sh Script
 - Full device idle mode and aggressive battery optimizations.
@@ -29,15 +35,6 @@
 - Dynamic CPU, RAM, GPU frequency adjustments.
 - Stable 120 FPS support and game rendering prioritization.
 - Ultra and Balanced Performance Modes selectable.
-
-## Main Module New Features
-- Improved installation UI (clarity, progress bar, instructions).
-- Full Vulkan rendering boost (switch from OpenGL to Vulkan).
-- Use SuperMario-Tweaker.sh instead of postdata-fs
-
-## General Changes
-- Removed duplicate `build.prop` entries.
-- Reorganized tweaks for better structure.
 
 ## Performance Improvements
 - Enabled high-performance CPU/GPU modes.
@@ -81,6 +78,3 @@
 ## Stability and Performance Improvements
 - Removed redundant logs and services.
 - Improved RAM usage and responsiveness.
-
-## Removed Configurations
-- Deleted unnecessary audio, Dalvik, logging, and network tweaks.
