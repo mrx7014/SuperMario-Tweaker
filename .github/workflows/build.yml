@@ -54,5 +54,5 @@ jobs:
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}  # Artifact name without `.zip` extension
-          path: ${{ env.ZIP_NAME }}  # Path to the ZIP file for upload
+          name: SMTW_${{ env.VERSION }}-${{ env.COMMIT_NUM }}-${{ env.COMMIT_HASH }}  # Use the expanded variables directly
+          path: ${{ env.ZIP_NAME }}  # Include the full path to the zip file
