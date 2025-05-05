@@ -48,8 +48,11 @@ jobs:
             -x "UPDATE.md" \
             -x "*.zip"  # Exclude any existing zip files
 
+      - name: List files after creating ZIP
+        run: ls -alh  # List the files to check if the zip file was created successfully
+
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.ZIP_NAME }}  # Name the artifact as the ZIP file name
+          name: SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}  # Artifact name without the `.zip` extension
           path: ${{ env.ZIP_NAME }}  # Path to the ZIP file for upload
