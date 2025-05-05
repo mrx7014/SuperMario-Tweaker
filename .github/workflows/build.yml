@@ -27,13 +27,13 @@ jobs:
           fetch-depth: 0  # Full history, required for accurate commit count
 
       - name: Set variables
-  id: setup
-  run: |
-    COMMIT_NUM=$(git rev-list --count HEAD)
-    COMMIT_HASH=$(git rev-parse --short HEAD)
-    VERSION=$(jq -r .version update.json)
-    ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
-    echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+        id: setup
+        run: |
+          COMMIT_NUM=$(git rev-list --count HEAD)
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          VERSION=$(jq -r .version update.json)
+          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Create ZIP file
         run: |
