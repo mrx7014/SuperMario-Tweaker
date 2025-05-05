@@ -7,14 +7,14 @@ on:
       - main
     paths:
       - '.github/workflows/build.yml'
-      - 'module/**'
+      - '/*'
       - 'update.json'
   pull_request:
     branches:
       - main
     paths:
       - '.github/workflows/build.yml'
-      - 'module/**'
+      - '/*'
       - 'update.json'
   workflow_dispatch:
 
@@ -33,20 +33,19 @@ jobs:
           COMMIT_NUM=$(git rev-list --count HEAD)
           COMMIT_HASH=$(git rev-parse --short HEAD)
           VERSION=$(jq -r .version update.json)
-          ZIP_NAME="Re-Malwack_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ZIP_NAME }}
-          path: module/
+          path: /
 
-      - name: Create ZIP
+
+     - name: Create SuperMario Tweaker Zip
         run: |
-          cd module
-          zip -r "../$ZIP_NAME.zip" ./*
-          cd ..
+          zip -r $ZIPNAME.zip . -x ".git*" -x ".github*" -x "SMTW-Banner.jpg" -x "README.md" -x "update.json" -x "UPDATE.md"
 
       - name: Check Commit Info
         id: check_commit
