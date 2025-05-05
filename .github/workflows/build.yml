@@ -3,8 +3,7 @@ name: Test Build
 on:
   push:
     branches:
-      - master
-
+      - master 
 jobs:
   test-build:
     name: Build Test Package
@@ -13,17 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Create Test Build Directory
-        run: |
-          mkdir build
-          rsync -av --exclude=".git*" --exclude=".github*" --exclude="SMTW-Banner.jpg" --exclude="README.md" --exclude="update.json" --exclude="UPDATE.md" ./ ./build/
-
       - name: Create SuperMarioTweaker Test Zip
         run: |
-          cd build
-          zip -r ../SuperMarioTweaker-test-${{ github.sha }}.zip .
+          zip -r SuperMarioTweaker-test-${{ github.sha }}.zip . \
+            -x ".git*" \
+            -x ".github*" \
+            -x "README.md" \
+            -x "SMTW-Banner.jpg" \
+            -x "update.json" \
+            -x "UPDATE.md" \
+            -x "SuperMarioTweaker-test-*.zip"
 
-      - name: Upload artifact
+      - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: SuperMarioTweaker-test-${{ github.sha }}
