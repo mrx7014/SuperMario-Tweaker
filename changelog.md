@@ -1,3 +1,6 @@
+# SuperMario Tweaker V2.0.1 - Changelog
+- Delete wrong " from customize.sh to fix installation process
+
 # SuperMario Tweaker V2.0.0 - Changelog
 
 ### Fixes & Updates
