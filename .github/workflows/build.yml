@@ -1,58 +1,24 @@
-# Original credits goes to @KOWX712 and @ukriu
-name: build
+name: Test Build SuperMario Tweaker Magisk Module
 
 on:
   push:
     branches:
-      - main
-    paths:
-      - '.github/workflows/build.yml'
-      - '/*'
-      - 'update.json'
-  pull_request:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/build.yml'
-      - '/*'
-      - 'update.json'
-  workflow_dispatch:
+      - master
 
 jobs:
-  release:
+  test-build:
+    name: Build Test Package
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Set variables
-        id: setup
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Test SuperMario Tweaker Zip
         run: |
-          COMMIT_NUM=$(git rev-list --count HEAD)
-          COMMIT_HASH=$(git rev-parse --short HEAD)
-          VERSION=$(jq -r .version update.json)
-          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
-          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+          zip -r SuperMarioTweaker-test-${{ github.sha }}.zip . -x ".git*" -x ".github*" -x "SMTW-Banner.jpg" -x "README.md" -x "update.json" -x "UPDATE.md"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.ZIP_NAME }}
-          path: /
-
-
-     - name: Create SuperMario Tweaker Zip
-        run: |
-          zip -r $ZIPNAME.zip . -x ".git*" -x ".github*" -x "SMTW-Banner.jpg" -x "README.md" -x "update.json" -x "UPDATE.md"
-
-      - name: Check Commit Info
-        id: check_commit
-        run: |
-          COMMIT_MSG="${{ github.event.head_commit.message }}"
-          if echo "$COMMIT_MSG" | grep -qiE "release|version|readme|workflow|website|site"; then
-            echo "SKIP=true" >> $GITHUB_ENV
-          else
-            echo "SKIP=false" >> $GITHUB_ENV
-          fi
+          name: SuperMarioTweaker-test-${{ github.sha }}
+          path: SuperMarioTweaker-test-${{ github.sha }}.zip
