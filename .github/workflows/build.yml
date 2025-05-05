@@ -32,22 +32,16 @@ jobs:
           COMMIT_NUM=$(git rev-list --count HEAD)
           COMMIT_HASH=$(git rev-parse --short HEAD)
           VERSION=$(jq -r .version update.json)
-          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
-          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
-
-      - name: Create ZIP file
-        run: |
-          zip -r "${ZIP_NAME}.zip" ./* \
-            -x ".git/*" \
-            -x ".github/*" \
-            -x "README.md" \
-            -x "SMTW-Banner.jpg" \
-            -x "update.json" \
-            -x "UPDATE.md" \
-            -x "*.zip"
+          ARTIFACT_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+          echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
       
-      - name: Upload ZIP artifact
+      - name: Upload artifact (auto-zipped)
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.ZIP_NAME }}             # No .zip here
-          path: ${{ env.ZIP_NAME }}.zip         # .zip added only here
+          name: ${{ env.ARTIFACT_NAME }}
+          path: |
+            *                  # include everything in repo root
+          if-no-files-found: error
+          compression-level: 6
+          overwrite: true
+          include-hidden-files: false
