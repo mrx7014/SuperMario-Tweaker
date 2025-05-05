@@ -26,5 +26,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SuperMarioTweaker-test-${{ github.sha }}
+          name: SuperMarioTweaker-test-${{ github.sha }}.zip
           path: SuperMarioTweaker-test-${{ github.sha }}.zip
