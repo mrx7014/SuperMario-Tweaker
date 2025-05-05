@@ -108,23 +108,6 @@ if [[ "$(getprop ro.iorapd.enable)" != "true" ]] && [[ "$sdk" -gt "29" ]]; then
         log_tweak "Failed to enable iorap" 0
     fi
 fi
-# Optimize HWUI based on total RAM
-case "$total_ram" in
-    2048)
-        if cat <<EOF >> "$MODPATH"/system.prop; then
-            log_tweak "Optimized HWUI for 2GB RAM" 1
-        else
-            log_tweak "Failed to optimize HWUI for 2GB RAM" 0
-        fi
-        ;;
-    3072)
-        if cat <<EOF >> "$MODPATH"/system.prop; then
-            log_tweak "Optimized HWUI for 3GB RAM" 1
-        else
-            log_tweak "Failed to optimize HWUI for 3GB RAM" 0
-        fi
-        ;;
-esac
 
 # Dalvik VM Tuning based on RAM
 if [[ "$total_ram" -lt "2048" ]]; then
