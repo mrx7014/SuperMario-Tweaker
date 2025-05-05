@@ -1,21 +1,41 @@
-name: Test Build
+name: build
 
 on:
   push:
     branches:
-      - master
+      - main
+    paths:
+      - '.github/workflows/build.yml'
+      - '*'  # Trigger the workflow for changes in any file in the root directory
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/build.yml'
+      - '*'  # Trigger the workflow for changes in any file in the root directory
+  workflow_dispatch:
 
 jobs:
-  test-build:
-    name: Build Test Package
+  release:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Create SuperMarioTweaker Test Zip
+      - name: Set variables
+        id: setup
         run: |
-          zip -r SuperMarioTweaker-test-${{ github.sha }}.zip . \
+          COMMIT_NUM=$(git rev-list --count HEAD)
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          VERSION=$(jq -r .version update.json)
+          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+
+      - name: Create ZIP
+        run: |
+          zip -r "${{ env.ZIP_NAME }}.zip" ./* \
             -x ".git*" \
             -x ".github*" \
             -x "README.md" \
@@ -24,8 +44,8 @@ jobs:
             -x "UPDATE.md" \
             -x "SuperMarioTweaker-test-*.zip"
 
-      - name: Upload Artifact
+      - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SuperMarioTweaker-test-${{ github.sha }}
-          path: SuperMarioTweaker-test-${{ github.sha }}.zip
+          name: ${{ env.ZIP_NAME }}  # Name the artifact as the ZIP file name
+          path: ${{ env.ZIP_NAME }}.zip  # Upload the ZIP file, not the directory
