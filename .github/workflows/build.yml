@@ -3,7 +3,8 @@ name: Test Build
 on:
   push:
     branches:
-      - master 
+      - master
+
 jobs:
   test-build:
     name: Build Test Package
@@ -26,5 +27,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SuperMarioTweaker-test-${{ github.sha }}.zip
+          name: SuperMarioTweaker-test-${{ github.sha }}
           path: SuperMarioTweaker-test-${{ github.sha }}.zip
