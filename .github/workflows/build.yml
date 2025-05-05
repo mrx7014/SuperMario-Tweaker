@@ -27,32 +27,27 @@ jobs:
           fetch-depth: 0  # Full history, required for accurate commit count
 
       - name: Set variables
-        id: setup
-        run: |
-          # Get commit details
-          COMMIT_NUM=$(git rev-list --count HEAD)
-          COMMIT_HASH=$(git rev-parse --short HEAD)
-          VERSION=$(jq -r .version update.json)  # Assuming version is in update.json
-          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}.zip"
-          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+  id: setup
+  run: |
+    COMMIT_NUM=$(git rev-list --count HEAD)
+    COMMIT_HASH=$(git rev-parse --short HEAD)
+    VERSION=$(jq -r .version update.json)
+    ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+    echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Create ZIP file
         run: |
-          # Zip the root directory, excluding unwanted files
-          zip -r "${{ env.ZIP_NAME }}" ./* \
+          zip -r "${ZIP_NAME}.zip" ./* \
             -x ".git/*" \
             -x ".github/*" \
             -x "README.md" \
             -x "SMTW-Banner.jpg" \
             -x "update.json" \
             -x "UPDATE.md" \
-            -x "*.zip"  # Exclude any existing zip files
-
-      - name: List files after creating ZIP
-        run: ls -alh  # List the files to check if the zip file was created successfully
-
+            -x "*.zip"
+      
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.ZIP_NAME }}  # Use the ZIP_NAME directly
-          path: ${{ env.ZIP_NAME }}.zip  # Include the full path to the zip file
+          name: ${{ env.ZIP_NAME }}             # No .zip here
+          path: ${{ env.ZIP_NAME }}.zip         # .zip added only here
