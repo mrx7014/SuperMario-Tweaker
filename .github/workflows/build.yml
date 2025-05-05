@@ -1,4 +1,4 @@
-name: build
+name: build test package
 
 on:
   push:
@@ -52,4 +52,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ZIP_NAME }}  # Name the artifact as the ZIP file name
-          path: ${{ env.ZIP_NAME }}.zip  # Path to the ZIP file for upload
+          path: ${{ env.ZIP_NAME }}  # Path to the ZIP file for upload
