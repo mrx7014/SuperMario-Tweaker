@@ -55,4 +55,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ZIP_NAME }}  # Use the ZIP_NAME directly
-          path: ${{ env.ZIP_NAME }}  # Include the full path to the zip file
+          path: ${{ env.ZIP_NAME }}.zip  # Include the full path to the zip file
