@@ -33,13 +33,13 @@ jobs:
           COMMIT_NUM=$(git rev-list --count HEAD)
           COMMIT_HASH=$(git rev-parse --short HEAD)
           VERSION=$(jq -r .version update.json)  # Assuming version is in update.json
-          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+          ZIP_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}.zip"
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Create ZIP file
         run: |
           # Zip the root directory, excluding unwanted files
-          zip -r "${{ env.ZIP_NAME }}.zip" ./* \
+          zip -r "${{ env.ZIP_NAME }}" ./* \
             -x ".git/*" \
             -x ".github/*" \
             -x "README.md" \
