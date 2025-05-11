@@ -4,7 +4,7 @@
 
 # Wait till boot completes 
 while [ -z "$(getprop sys.boot_completed)" ]; do
-sleep 10
+ sleep 10
 done
 
 # Hungry GMS 
