@@ -2,6 +2,11 @@
 
 # SuperMario Tweaker
 
+# Wait till boot completes 
+while [ -z "$(getprop sys.boot_completed)" ]; do
+ sleep 10
+done
+
 # Hungry GMS 
 pm disable com.google.android.gms/.ads.AdRequestBrokerService
 pm disable com.google.android.gms/.ads.GservicesValueBrokerService
