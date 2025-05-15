@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/github/stars/MRX7014/SuperMario-Tweaker?style=flat-square" alt="GitHub Stars" />
     <img src="https://img.shields.io/github/downloads/MRX7014/SuperMario-Tweaker/total?style=flat-square" alt="GitHub Downloads" />
     <img src="https://img.shields.io/badge/Magisk-Module-success?style=flat-square&logo=google" alt="Magisk Module" />
-    <img src="https://img.shields.io/badge/Vulkan-Enabled-critical?style=flat-square&logo=amd" alt="Vulkan Enabled" />
+    <img src="https://img.shields.io/badge/Vulkan-Enabled-critical?style=flat-square&logo=vulkan" alt="Vulkan Enabled" />
     <img src="https://img.shields.io/badge/Gaming-Boosted-red?style=flat-square&logo=nintendo-switch" alt="Gaming Boosted" />
   </p>
   
