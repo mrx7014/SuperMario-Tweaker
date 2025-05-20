@@ -101,7 +101,7 @@
 
 **Developed & maintained by:** MRX7014
 
-**Special thanks to**: **[@ZG089](https://github.com/ZG089)**
+**Special thanks to**: [@ZG089](https://github.com/ZG089)
 
 **Thanks to:** Open-source Vulkan (Mesa) community and all testers  
 
