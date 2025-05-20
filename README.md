@@ -100,9 +100,10 @@
 ## 🧑‍💻 Credits
 
 **Developed & maintained by:** MRX7014
-**Thanks For**: **[@ZG089](https://github.com/ZG089)**
 
-**Special thanks to:** Open-source Vulkan (Mesa Turnip) community and all testers  
+**Special thanks to**: **[@ZG089](https://github.com/ZG089)**
+
+**Thanks to:** Open-source Vulkan (Mesa) community and all testers  
 
 
 For updates and support, join our Telegram channel: **[@MRX7014Cloud](https://t.me/MRX7014Cloud)**
