@@ -33,10 +33,6 @@ windowsmgr.max_events_per_sec=300
 ro.ril.disable.power.collapse=0
 ro.ril.power_collapse=1
 
-# Spoof CPU & GPU // SnapDragon 8 Elite & Adreno830
-ro.soc.model=SM8750-3-AB
-ro.gpu.model=Adreno830
-
 # GPU vulkan-capable (Use GPU instead of CPU while rendering)
 debug.composition.type=gpu
 
@@ -84,10 +80,6 @@ ro.vendor.qti.sys.fw.bservice_limit=60
 # iorapd prop
 ro.iorapd.enable=true
 
-# Disable rotator downscale
-vendor.display.disable_rotator_downscale=true
-# More info at: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/e4d576deb3f25c09b2a85ef9738fad61afec6ce8#diff-331eb533fa0b3a1aaaff624db1027b418cffa5780caecf042f25ef8de935a34a
-
 # Enable usage of dex2oat64
 dalvik.vm.dex2oat64.enabled=true
 # More info at: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/cc3ff3c5e5c5b58bfbf68729f26299e1fa2334b0#diff-331eb533fa0b3a1aaaff624db1027b418cffa5780caecf042f25ef8de935a34a
@@ -130,19 +122,6 @@ debug.gpurend.vsync=false
 debug.sf.fps=120
 debug.display.max_fps=120
 ro.surface_flinger.use_content_detection_for_refresh_rate=false
-
-# Enhance
-vendor.perf.framepacing.enable=1
-ro.vendor.display.default_fps=120
-ro.vendor.display.type=oled
-vendor.display.vds_allow_hwc=1
-vendor.display.enable_optimize_refresh=1
-vendor.display.use_smooth_motion=1
-vendor.display.idle_time=0
-debug.sf.treat_170m_as_sRGB=1
-persist.vendor.dfps.level=120
-ro.vendor.dfps.enable=false
-ro.vendor.smart_dfps.enable=false
 
 # Touch Optimization
 persist.sys.scrollingcache=0

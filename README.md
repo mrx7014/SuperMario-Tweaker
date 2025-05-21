@@ -1,4 +1,4 @@
-# SuperMario Tweaker v2.0.1
+# SuperMario Tweaker v3.0.0
 
 <div align="center">
   <img src="SMTW-Banner.jpg" alt="SuperMario Tweaker Banner" />

@@ -59,12 +59,6 @@ else
     log_tweak "Failed to enable aggressive battery saver" 0
 fi
 
-if settings put global enable_freeform_support 1; then
-    log_tweak "Enabled freeform support" 1
-else
-    log_tweak "Failed to enable freeform support" 0
-fi
-
 if settings put global allow_signature_fake 1; then
     log_tweak "Allowed signature fake" 1
 else
@@ -227,40 +221,6 @@ if [[ "$IS64BIT" == "true" ]]; then
     else
         log_tweak "Failed to enable dex2oat64" 0
     fi
-fi
-
-# Disable background access for specific packages
-for pkg in \
-  com.android.backupconfirm \
-  com.google.android.setupwizard \
-  com.android.printservice.recommendation \
-  com.google.android.feedback \
-  com.google.android.onetimeinitializer \
-  com.xiaomi.joyose \
-  com.android.traceur \
-  org.codeaurora.gps.gpslogsave \
-  com.qualcomm.qti.perfdump \
-  com.google.android.gms \
-  com.google.android.gsf \
-  com.android.onetimeinitializer; do
-  if cmd appops set "$pkg" RUN_IN_BACKGROUND ignore 2>/dev/null; then
-      log_tweak "Disabled background access for $pkg" 1
-  else
-      log_tweak "Failed to disable background access for $pkg" 0
-  fi
-done
-
-# Force-stop and disable traceur
-if am force-stop com.android.traceur 2>/dev/null; then
-    log_tweak "Force-stopped com.android.traceur" 1
-else
-    log_tweak "Failed to force-stop com.android.traceur" 0
-fi
-
-if pm disable com.android.traceur 2>/dev/null; then
-    log_tweak "Disabled com.android.traceur" 1
-else
-    log_tweak "Failed to disable com.android.traceur" 0
 fi
 
 # Clean cache

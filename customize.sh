@@ -60,7 +60,6 @@ ui_print ""
 ui_print "GPU Cache Cleared ..."
 sleep 2
 ui_print "✅ Tweaks Applied Successfully!"
-ui_print "〽️ SuperMario-Tweaker v2.0.1"
+ui_print "〽️ SuperMario-Tweaker v3.0.0 - Beta"
 ui_print "📢 Join Telegram: @MRX7014Cloud"
-am start -a android.intent.action.VIEW -d "https://t.me/mrx7014cloud"
 ui_print "💡 Reboot to activate changes"
