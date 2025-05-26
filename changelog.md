@@ -1,5 +1,7 @@
 # SuperMario Tweaker V2.1.0 - Changelog
 - Delete unnecessary tweaks to fix bootloop for some devices
+- Delete thermel controller and powerhint (Not needed anymore)
+- Turnip (Vulkan driver) upgraded to Mesa 25.1.1, synced with latest upstream changes.
 - Delete CPU & GPU spoofing to prevent bugs "especially with camera"
 - Fixes here and there
 - New Banner :)
