@@ -1,6 +1,7 @@
 # SuperMario Tweaker v2.2.0 - Changelog 
 
 🔄Updates:
+- Add `action button` to clear GPU cache
 - Clean unnecessary tweaks in SuperMario-Tweaker.sh script
 - Change how module work
 - improvements here and there
