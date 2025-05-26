@@ -1,7 +1,7 @@
 # SuperMario Tweaker
 
 <div align="center">
-  <img src="SMTW-Banner.jpg" alt="SuperMario Tweaker Banner" />
+  <img src="assets/SMTW-Banner.jpg" alt="SuperMario Tweaker Banner" />
   <br />
 
 [![Module Version](https://img.shields.io/badge/Module_Version-v2.0.1-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v2.0.1)
@@ -30,16 +30,13 @@
 - **Vulkan 1.4 support** (via Mesa Turnip v25.0.3) for better graphics  
 - **Optimized RAM management** & faster app switching  
 - **Battery life improvements** with deep Doze & background control  
-- **CPU & GPU optimizations** for high performance  
-- **Game Mode** for boosted FPS and locked display to 120Hz  
+- **CPU & GPU optimizations** for high performance    
 - **Signature spoofing**  
-- **Disabled Google bloatware** & unnecessary logging  
-- **Thermal tuning** to prevent overheating during heavy use  
+- **Disabled Google bloatware** & unnecessary logging    
 - **SurfaceFlinger & HWUI tweaks** for better UI rendering  
 - **Dynamic CPU-GPU composition** for smoother multitasking  
 - **Optimized app launch** & faster response with IORAPD prefetching  
-- **Enhanced gaming experience** with CPU frequency locking & video mode optimizations  
-- **Powerhint.xml Configurations** for optimized CPU & memory performance, with tuning for tasks like camera usage and video recording at different frame rates.  
+- **Enhanced gaming experience** with CPU frequency locking & video mode optimizations
 
 ---
 

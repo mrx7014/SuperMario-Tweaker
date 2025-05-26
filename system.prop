@@ -12,13 +12,8 @@ ro.ril.sensor.sleep.control=1
 
 # UI & Touch Responsiveness
 view.scroll_friction=10
-touch.pressure.scale=0.001
-touch.size.scale=1
-touch.size.bias=0
 touch.size.isSummed=0
 touch.orientation.calibration=none
-touch.distance.calibration=none
-touch.distance.scale=0
 touch.coverage.calibration=box
 touch.gestureMode=spots
 MultitouchSettleInterval=1ms
@@ -26,7 +21,6 @@ MultitouchMinDistance=1px
 TapInterval=1ms
 TapSlop=1px
 ro.min_pointer_dur=8
-windowsmgr.max_events_per_sec=300
 
 # Battery Optimization
 ro.ril.disable.power.collapse=0
@@ -38,9 +32,6 @@ debug.composition.type=gpu
 # Misc tweaks
 ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=1000
-
-# Increase GPU buffer count
-debug.egl.buffcount=4
 
 # Use HW to compose surfaceflinger
 debug.sf.hw=1
@@ -66,13 +57,7 @@ persist.sys.lmk.reportkills=false
 debug.hwui.render_dirty_regions=false
 # More info at: https://developer.arm.com/documentation/ka001862/latest
 
-# Disable vsync
-debug.hwui.disable_vsync=true
-
-# Disable vsync for CPU rendered apps
-debug.cpurend.vsync=false
-
-# Increase cached app limit (A9)
+# Increase cached app limit
 ro.vendor.qti.sys.fw.bg_apps_limit=600
 ro.vendor.qti.sys.fw.bservice_limit=60
 
@@ -95,8 +80,6 @@ persist.sys.purgeable_assets=1
 ro.kernel.android.checkjni=0
 ro.sys.fw.trim_enable_memory=true
 dalvik.vm.verify-bytecode=false
-debug.kill_allocating_task=0
-ENFORCE_PROCESS_LIMIT=false
 
 # CPU Performance
 debug.performance.tuning=1
@@ -106,48 +89,26 @@ persist.sys.NV_STEREO_CONTROL=0
 persist.sys.NV_STEREO_EYES=0
 
 # GPU Optimization (Adreno)
-debug.egl.swapinterval=0
 debug.hwui.use_vulkan=true
 ro.product.gpu.driver=1
 video.accelerate.hw=1
-debug.gr.swapinterval=0
-persist.sys.use_dithering=0
 debug.gralloc.gfx_ubwc_disable=0
 persist.sys.composer.preferred_mode=performance
 
-# Game Mode / High FPS
-debug.cpurend.dynamicfps=false
-debug.cpurend.fpslimit=120
-debug.cpurend.fpsmin=120
-debug.gpurend.vsync=false
-debug.sf.fps=120
-debug.display.max_fps=120
-ro.surface_flinger.use_content_detection_for_refresh_rate=false
-
 # Enhance
 vendor.perf.framepacing.enable=1
-ro.vendor.display.default_fps=120
-ro.vendor.display.type=oled
 vendor.display.vds_allow_hwc=1
 vendor.display.enable_optimize_refresh=1
 vendor.display.use_smooth_motion=1
 vendor.display.idle_time=0
 debug.sf.treat_170m_as_sRGB=1
-persist.vendor.dfps.level=120
-ro.vendor.dfps.enable=false
-ro.vendor.smart_dfps.enable=false
 
 # Touch Optimization
 persist.sys.scrollingcache=0
 ro.max.fling_velocity=30000
 ro.min.fling_velocity=12000
 sys.use_fifo_ui=1
-touch.size.calibration=geometric
 persist.sys.ui.hw=true
-
-# Qualcomm Snapdragon Tweaks
-debug.qctwa.statusbar=1
-debug.qctwa.preservebuf=1
 
 # 3D Optimizations
 hw3d.force=1
@@ -159,10 +120,6 @@ persist.service.pcsync.enable=0
 
 # FPS Stability
 debug.sf.enable_hwc_vds=0
-debug.sf.early_phase_offset_ns=250000
-debug.sf.early_app_phase_offset_ns=250000
-debug.sf.early_gl_phase_offset_ns=1500000
-debug.sf.early_gl_app_phase_offset_ns=7500000
 debug.sf.high_fps_early_phase_offset_ns=3000000
 debug.sf.high_fps_early_gl_phase_offset_ns=500000
 debug.sf.high_fps_late_app_phase_offset_ns=50000
@@ -173,8 +130,5 @@ debug.sf.showbackground=0
 debug.sf.showfps=0
 
 # More Tweaks
-debug.egl.force_msaa=false
-debug.sf.swapinterval=0
 debug.gfx.driver=1
-persist.sys.game.turbo=0
 debug.egl.profiler=0

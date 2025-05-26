@@ -198,16 +198,6 @@ elif [[ "$total_ram" -ge "4096" && "$total_ram" -lt "5130" ]]; then
     fi
 fi
 
-
-# Extra tweaks
-if [[ "$(getprop ro.boot.hardware)" == "qcom" ]]; then
-    if sed -i '/vendor.display.disable_rotator_downscale/s/.*/vendor.display.disable_rotator_downscale=1/' "$MODPATH"/system.prop; then
-        log_tweak "Disabled rotator downscale for Qualcomm" 1
-    else
-        log_tweak "Failed to disable rotator downscale for Qualcomm" 0
-    fi
-fi
-
 if [[ "$IS64BIT" == "true" ]]; then
     if sed -i '/dalvik.vm.dex2oat64.enabled/s/.*/dalvik.vm.dex2oat64.enabled=true/' "$MODPATH"/system.prop; then
         log_tweak "Enabled dex2oat64" 1
@@ -218,197 +208,14 @@ fi
 
 # Disable background access for specific packages
 for pkg in \
-  com.android.backupconfirm \
-  com.google.android.setupwizard \
-  com.android.printservice.recommendation \
-  com.google.android.feedback \
-  com.google.android.onetimeinitializer \
-  com.xiaomi.joyose \
-  com.android.traceur \
-  org.codeaurora.gps.gpslogsave \
-  com.qualcomm.qti.perfdump \
   com.google.android.gms \
-  com.google.android.gsf \
-  com.android.onetimeinitializer; do
+  com.google.android.gsf \; do
   if cmd appops set "$pkg" RUN_IN_BACKGROUND ignore 2>/dev/null; then
       log_tweak "Disabled background access for $pkg" 1
   else
       log_tweak "Failed to disable background access for $pkg" 0
   fi
 done
-
-# Force-stop and disable traceur
-if am force-stop com.android.traceur 2>/dev/null; then
-    log_tweak "Force-stopped com.android.traceur" 1
-else
-    log_tweak "Failed to force-stop com.android.traceur" 0
-fi
-
-if pm disable com.android.traceur 2>/dev/null; then
-    log_tweak "Disabled com.android.traceur" 1
-else
-    log_tweak "Failed to disable com.android.traceur" 0
-fi
-
-# GPU max power level
-if echo 1260000000 > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq; then
-    log_tweak "Set GPU min frequency" 1
-else
-    log_tweak "Failed to set GPU min frequency" 0
-fi
-
-if echo 1260000000 > /sys/class/kgsl/kgsl-3d0/devfreq/max_freq; then
-    log_tweak "Set GPU max frequency" 1
-else
-    log_tweak "Failed to set GPU max frequency" 0
-fi
-
-if echo 1260000000 > /sys/class/kgsl/kgsl-3d0/devfreq/cur_freq; then
-    log_tweak "Set GPU current frequency" 1
-else
-    log_tweak "Failed to set GPU current frequency" 0
-fi
-
-if echo 1260000000 > /sys/class/kgsl/kgsl-3d0/devfreq/target_freq; then
-    log_tweak "Set GPU target frequency" 1
-else
-    log_tweak "Failed to set GPU target frequency" 0
-fi
-
-if echo 0 > /sys/class/kgsl/kgsl-3d0/min_pwrlevel; then
-    log_tweak "Set GPU min power level" 1
-else
-    log_tweak "Failed to set GPU min power level" 0
-fi
-
-if echo 0 > /sys/class/kgsl/kgsl-3d0/max_pwrlevel; then
-    log_tweak "Set GPU max power level" 1
-else
-    log_tweak "Failed to set GPU max power level" 0
-fi
-
-if echo 0 > /sys/class/kgsl/kgsl-3d0/default_pwrlevel; then
-    log_tweak "Set GPU default power level" 1
-else
-    log_tweak "Failed to set GPU default power level" 0
-fi
-
-if echo performance > /sys/class/kgsl/kgsl-3d0/devfreq/governor; then
-    log_tweak "Set GPU governor to performance" 1
-else
-    log_tweak "Failed to set GPU governor to performance" 0
-fi
-
-if echo 0 > /sys/class/kgsl/kgsl-3d0/thermal_pwrlevel; then
-    log_tweak "Set GPU thermal power level" 1
-else
-    log_tweak "Failed to set GPU thermal power level" 0
-fi
-
-if echo 0 > /sys/class/kgsl/kgsl-3d0/bus_split; then
-    log_tweak "Set GPU bus split" 1
-else
-    log_tweak "Failed to set GPU bus split" 0
-fi
-
-if echo 1260 > /sys/class/kgsl/kgsl-3d0/clock_mhz; then
-    log_tweak "Set GPU clock MHz" 1
-else
-    log_tweak "Failed to set GPU clock MHz" 0
-fi
-
-if echo 1260 > /sys/class/kgsl/kgsl-3d0/max_clock_mhz; then
-    log_tweak "Set GPU max clock MHz" 1
-else
-    log_tweak "Failed to set GPU max clock MHz" 0
-fi
-
-if echo 1260 > /sys/class/kgsl/kgsl-3d0/min_clock_mhz; then
-    log_tweak "Set GPU min clock MHz" 1
-else
-    log_tweak "Failed to set GPU min clock MHz" 0
-fi
-
-if echo 1260000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk; then
-    log_tweak "Set GPU max clock" 1
-else
-    log_tweak "Failed to set GPU max clock" 0
-fi
-
-if echo 0 > /sys/class/kgsl/kgsl-3d0/throttling; then
-    log_tweak "Set GPU throttling" 1
-else
-    log_tweak "Failed to set GPU throttling" 0
-fi
-
-if echo 1 > /sys/class/kgsl/kgsl-3d0/force_bus_on; then
-    log_tweak "Forced GPU bus on" 1
-else
-    log_tweak "Failed to force GPU bus on" 0
-fi
-
-if echo 1 > /sys/class/kgsl/kgsl-3d0/force_rail_on; then
-    log_tweak "Forced GPU rail on" 1
-else
-    log_tweak "Failed to force GPU rail on" 0
-fi
-
-if echo 1 > /sys/class/kgsl/kgsl-3d0/force_clk_on; then
-    log_tweak "Forced GPU clock on" 1
-else
-    log_tweak "Failed to force GPU clock on" 0
-fi
-
-if echo 1 > /sys/class/kgsl/kgsl-3d0/force_no_nap; then
-    log_tweak "Set GPU to no nap" 1
-else
-    log_tweak "Failed to set GPU to no nap" 0
-fi
-
-if echo 0 > /sys/class/kgsl/kgsl-3d0/pwrscale; then
-    log_tweak "Set GPU power scale" 1
-else
-    log_tweak "Failed to set GPU power scale" 0
-fi
-
-
-# CPU & kernel boost settings
-if echo 1 > /sys/devices/system/cpu/cpufreq/interactive/boost; then
-    log_tweak "Enabled CPU boost" 1
-else
-    log_tweak "Failed to enable CPU boost" 0
-fi
-
-if echo 1 > /sys/module/cpu_boost/parameters/boost; then
-    log_tweak "Enabled CPU boost module" 1
-else
-    log_tweak "Failed to enable CPU boost module" 0
-fi
-
-if echo 1 > /sys/module/cpu_boost/parameters/input_boost_enabled; then
-    log_tweak "Enabled input boost" 1
-else
-    log_tweak "Failed to enable input boost" 0
-fi
-
-if echo 1 > /sys/module/cpu_boost/parameters/sched_boost; then
-    log_tweak "Enabled scheduler boost" 1
-else
-    log_tweak "Failed to enable scheduler boost" 0
-fi
-
-if echo 1 > /sys/module/msm_performance/parameters/touchboost; then
-    log_tweak "Enabled touch boost" 1
-else
-    log_tweak "Failed to enable touch boost" 0
-fi
-
-if echo 1 > /sys/module/msm_thermal/core_control/enabled; then
-    log_tweak "Enabled thermal core control" 1
-else
-    log_tweak "Failed to enable thermal core control" 0
-fi
-
 
 # EAS & power scheduling
 if echo 1 > /proc/sys/kernel/sched_boost; then
@@ -417,24 +224,7 @@ else
     log_tweak "Failed to enable scheduler boost" 0
 fi
 
-if echo 0 > /sys/module/workqueue/parameters/power_efficient; then
-    log_tweak "Disabled power efficient workqueue" 1
-else
-    log_tweak "Failed to disable power efficient workqueue" 0
-fi
-
 # Kernel Tweaks
-if chmod 644 /sys/kernel/fpscaps && echo 0 > /sys/kernel/fpscaps; then
-    log_tweak "Set fpscaps to 0" 1
-else
-    log_tweak "Failed to set fpscaps" 0
-fi
-
-if chmod 644 /sys/kernel/gpu/gpu_clock && echo 1260 > /sys/kernel/gpu/gpu_clock; then
-    log_tweak "Set GPU clock" 1
-else
-    log_tweak "Failed to set GPU clock" 0
-fi
 
 if chmod 644 /sys/kernel/gpu/gpu_min_clock && echo 1260 > /sys/kernel/gpu/gpu_min_clock; then
     log_tweak "Set GPU min clock" 1
@@ -487,21 +277,6 @@ if cmd display set-match-content-frame-rate-pref 1; then
 else
     log_tweak "Failed to set match content fps to 1" 0
 fi
-
-# Game Performance & FPS Settings
-packages=$(pm list packages -3 | awk -F':' '{print $2}')
-for package in $packages; do
-    if cmd device_config put game_overlay $package mode=2,fps=120,resolution=high,antialiasing=2,cpu_level=high,gpu_level=high,thermal_mode=performance,refresh_rate=120; then
-        log_tweak "Configured game overlay for $package" 1
-    else
-        log_tweak "Failed to configure game overlay for $package" 0
-    fi
-    if cmd game set --mode performance --fps 120 $package; then
-        log_tweak "Set game mode to performance for $package" 1
-    else
-        log_tweak "Failed to set game mode to performance for $package" 0
-    fi
-done
 
 android_properties=
 debug.sf.disable_backpressure=1
@@ -565,27 +340,6 @@ else
     log_tweak "Failed to enable swap ratio" 0
 fi
 
-
-# Zram Settings
-if echo 2621440000 > /sys/block/zram0/disksize; then
-    log_tweak "Set zram disk size" 1
-else
-    log_tweak "Failed to set zram disk size" 0
-fi
-
-# FS settings
-if echo 1024 > /sys/class/block/mmcblk0/queue/read_ahead_kb; then
-    log_tweak "Set read ahead kb to 1024" 1
-else
-    log_tweak "Failed to set read ahead kb" 0
-fi
-
-if echo noop > /sys/block/mmcblk0/queue/scheduler; then
-    log_tweak "Set I/O scheduler to noop" 1
-else
-    log_tweak "Failed to set I/O scheduler to noop" 0
-fi
-
 # Prop Tweak
 resetprop -n logd.statistics false
 resetprop -n persist.logd.statistics false
@@ -636,12 +390,6 @@ else
     log_tweak "Failed to enable sched boost" 0
 fi
 
-if echo 0 > /sys/kernel/msm_thermal/enabled; then
-    log_tweak "Disabled msm_thermal" 1
-else
-    log_tweak "Failed to disable msm_thermal" 0
-fi
-
 if echo "0   0   0   0" > /proc/sys/kernel/printk; then
     log_tweak "Set printk to 0" 1
 else
@@ -664,13 +412,6 @@ if echo 0 > /proc/sys/kernel/printk_ratelimit; then
     log_tweak "Set printk ratelimit to 0" 1
 else
     log_tweak "Failed to set printk ratelimit" 0
-fi
-
-# Quick Boot
-if setprop ro.config.hw_quickpoweron true; then
-    log_tweak "Enabled quick boot" 1
-else
-    log_tweak "Failed to enable quick boot" 0
 fi
 
 if setprop debug.composition.type gpu; then

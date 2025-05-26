@@ -1,3 +1,36 @@
+# SuperMario Tweaker v2.2.0 - Changelog 
+
+🔄Updates:
+- Clean unnecessary tweaks in SuperMario-Tweaker.sh script
+- Change how module work
+- improvements here and there
+
+🛠️Fixes:
+- Touch & Input
+  - Removed fine-tuned touch calibrations: pressure scaling, size scaling/bias, distance calibration and scaling.
+  - Removed limits on multitouch event rate (windowsmgr.max_events_per_sec).
+  - These affect touch sensitivity, accuracy, and UI responsiveness.
+
+- GPU & Graphics:
+  - Removed increased GPU buffer count (debug.egl.buffcount=4) which can improve frame buffering.
+  - Removed several SurfaceFlinger optimizations like disabling crop recompute and backpressure.
+  - Removed disabling of partial invalidates (debug.hwui.render_dirty_regions=false), impacting rendering efficiency.
+
+- Vsync and Frame Sync:
+  - Removed disabling of vsync (debug.hwui.disable_vsync=true and debug.cpurend.vsync=false) to reduce screen tearing and improve frame timing.
+  - Removed swap interval tweaks (debug.egl.swapinterval=0 and debug.gr.swapinterval=0) affecting frame pacing.
+
+- System Stability and Memory:
+  - Removed disabling of killing resource-heavy tasks (debug.kill_allocating_task=0) which helps free memory.
+  - Removed disabling process limit (ENFORCE_PROCESS_LIMIT=false), avoiding system overload.
+
+- Visual Quality:
+  - Removed disabling of dithering and MSAA forcing, which can degrade visual quality.
+
+- Gaming & Display:
+  - Removed disabling of Game Mode (persist.sys.game.turbo=0), potentially reducing gaming performance boosts.
+  - Removed forced 120Hz refresh rate and dynamic FPS settings, which save battery but can limit smoothness.
+
 # SuperMario Tweaker V2.1.0 - Changelog
 - Delete unnecessary tweaks to fix bootloop for some devices
 - Delete thermel controller and powerhint (Not needed anymore)
