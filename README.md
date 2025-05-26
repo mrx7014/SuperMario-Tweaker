@@ -2,13 +2,14 @@
 
 <div align="center">
   <img src="SMTW-Banner.jpg" alt="SuperMario Tweaker Banner" />
-  <br /><br />
-  <p>
-    <img src="https://img.shields.io/github/stars/MRX7014/SuperMario-Tweaker?style=flat-square" alt="GitHub Stars" />
-    <img src="https://img.shields.io/github/downloads/MRX7014/SuperMario-Tweaker/total?style=flat-square" alt="GitHub Downloads" />
-    <img src="https://img.shields.io/badge/Magisk-Module-success?style=flat-square&logo=magisk" alt="Magisk Module" />
-    <img src="https://img.shields.io/badge/Vulkan-Enabled-critical?style=flat-square&logo=vulkan" alt="Vulkan Enabled" />
-  </p>
+  <br />
+
+[![Module Version](https://img.shields.io/badge/Module_Version-v2.0.1-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v2.0.1)
+[![Download](https://img.shields.io/github/downloads/mrx7014/SuperMario-Tweaker/total?style=for-the-badge&cacheSeconds=2)](https://github.com/mrx7014/SuperMario-Tweaker/releases)
+[![Channel](https://img.shields.io/badge/Follow_Channel-MRX7014Cloud-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014cloud)
+[![Personal acc on TG](https://img.shields.io/badge/Contact_Developer_via-Telegram-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014)
+[![Donation](https://img.shields.io/badge/Support%20Development-black?style=for-the-badge&logo=buymeacoffee&logoColor=black&logoSize=auto&color=%23FFDD00&cacheSeconds=2&link=https%3A%2F%2Fbuymeacoffee.com%2Fzg089&link=https%3A%2F%2Fbuymeacoffee.com%2Fzg089)](https://buymeacoffee.com/mrx7014)
+![Built with](https://img.shields.io/badge/Made_with-Love-red?style=for-the-badge)
   
   <b>Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!</b>
   
