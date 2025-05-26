@@ -1,7 +1,7 @@
 # SuperMario Tweaker
 
 <div align="center">
-  <img src="assets/SMTW-Banner.jpg" alt="SuperMario Tweaker Banner" />
+  <img src="assets/SMTW-Banner.jpg" alt="" />
   <br />
 
 [![Module Version](https://img.shields.io/badge/Module_Version-v2.0.1-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v2.0.1)
