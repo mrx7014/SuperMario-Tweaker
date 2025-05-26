@@ -11,11 +11,11 @@
 [![Donation](https://img.shields.io/badge/Support%20Development-black?style=for-the-badge&logo=buymeacoffee&logoColor=black&logoSize=auto&color=%23FFDD00&cacheSeconds=2&link=https%3A%2F%2Fbuymeacoffee.com%2Fzg089&link=https%3A%2F%2Fbuymeacoffee.com%2Fzg089)](https://buymeacoffee.com/mrx7014)
 ![Built with](https://img.shields.io/badge/Made_with-Love-red?style=for-the-badge)
   
-  <b>Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!</b>
+**Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!**
   
   <br />
   
-<b>Working on Snapdragon only</b>
+**Working on Snapdragon only**
   
 </div>
 
