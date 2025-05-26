@@ -4,7 +4,7 @@
   <img src="assets/SMTW-Banner.jpg" alt="" />
   <br />
 
-[![Module Version](https://img.shields.io/badge/Module_Version-v2.0.1-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v2.0.1)
+[![Module Version](https://img.shields.io/badge/Module_Version-v2.2.0-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v2.2.0)
 [![Download](https://img.shields.io/github/downloads/mrx7014/SuperMario-Tweaker/total?style=for-the-badge&cacheSeconds=2)](https://github.com/mrx7014/SuperMario-Tweaker/releases)
 [![Channel](https://img.shields.io/badge/Follow_Channel-MRX7014Cloud-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014cloud)
 [![Personal acc on TG](https://img.shields.io/badge/Contact_Developer_via-Telegram-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014)
