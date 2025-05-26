@@ -1,4 +1,4 @@
-# SuperMario Tweaker v2.0.1
+# SuperMario Tweaker
 
 <div align="center">
   <img src="SMTW-Banner.jpg" alt="SuperMario Tweaker Banner" />
@@ -8,7 +8,6 @@
     <img src="https://img.shields.io/github/downloads/MRX7014/SuperMario-Tweaker/total?style=flat-square" alt="GitHub Downloads" />
     <img src="https://img.shields.io/badge/Magisk-Module-success?style=flat-square&logo=magisk" alt="Magisk Module" />
     <img src="https://img.shields.io/badge/Vulkan-Enabled-critical?style=flat-square&logo=vulkan" alt="Vulkan Enabled" />
-    <img src="https://img.shields.io/badge/Gaming-Boosted-red?style=flat-square&logo=nintendo-switch" alt="Gaming Boosted" />
   </p>
   
   <b>Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!</b>

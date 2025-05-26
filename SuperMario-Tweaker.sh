@@ -59,24 +59,11 @@ else
     log_tweak "Failed to enable aggressive battery saver" 0
 fi
 
-if settings put global enable_freeform_support 1; then
-    log_tweak "Enabled freeform support" 1
-else
-    log_tweak "Failed to enable freeform support" 0
-fi
-
 if settings put global allow_signature_fake 1; then
     log_tweak "Allowed signature fake" 1
 else
     log_tweak "Failed to allow signature fake" 0
 fi
-
-if settings put system display_color_enhance 1; then
-    log_tweak "Enabled display color enhance" 1
-else
-    log_tweak "Failed to enable display color enhance" 0
-fi
-
 
 # Reset and apply device idle constants
 if settings delete global device_idle_constants >/dev/null 2>&1; then
@@ -262,51 +249,6 @@ if pm disable com.android.traceur 2>/dev/null; then
 else
     log_tweak "Failed to disable com.android.traceur" 0
 fi
-
-# Clean cache
-if sync && rm -rf /data/dalvik-cache /cache/dalvik-cache; then
-    log_tweak "Cleaned dalvik-cache" 1
-else
-    log_tweak "Failed to clean dalvik-cache" 0
-fi
-
-# Set small CPU cores (0-3) to performance mode
-for cpu in 0 1 2 3; do
-    if echo performance > /sys/devices/system/cpu/cpu$cpu/cpufreq/scaling_governor; then
-        log_tweak "Set CPU core $cpu to performance mode" 1
-    else
-        log_tweak "Failed to set CPU core $cpu to performance mode" 0
-    fi
-    if echo 1900800 > /sys/devices/system/cpu/cpu$cpu/cpufreq/scaling_min_freq; then
-        log_tweak "Set min frequency for CPU core $cpu" 1
-    else
-        log_tweak "Failed to set min frequency for CPU core $cpu" 0
-    fi
-    if echo 1900800 > /sys/devices/system/cpu/cpu$cpu/cpufreq/scaling_max_freq; then
-        log_tweak "Set max frequency for CPU core $cpu" 1
-    else
-        log_tweak "Failed to set max frequency for CPU core $cpu" 0
-    fi
-done
-
-# Set big CPU cores (4-7) to performance mode
-for cpu in 4 5 6 7; do
-    if echo performance > /sys/devices/system/cpu/cpu$cpu/cpufreq/scaling_governor; then
-        log_tweak "Set CPU core $cpu to performance mode" 1
-    else
-        log_tweak "Failed to set CPU core $cpu to performance mode" 0
-    fi
-    if echo 2802300 > /sys/devices/system/cpu/cpu$cpu/cpufreq/scaling_min_freq; then
-        log_tweak "Set min frequency for CPU core $cpu" 1
-    else
-        log_tweak "Failed to set min frequency for CPU core $cpu" 0
-    fi
-    if echo 2802300 > /sys/devices/system/cpu/cpu$cpu/cpufreq/scaling_max_freq; then
-        log_tweak "Set max frequency for CPU core $cpu" 1
-    else
-        log_tweak "Failed to set max frequency for CPU core $cpu" 0
-    fi
-done
 
 # GPU max power level
 if echo 1260000000 > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq; then
@@ -561,7 +503,7 @@ for package in $packages; do
     fi
 done
 
-android_properties="
+android_properties=
 debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
 debug.sf.enable_hwc_vds=0
@@ -573,15 +515,14 @@ debug.sf.high_fps_early_phase_offset_ns=3000000
 debug.sf.high_fps_early_gl_phase_offset_ns=500000
 debug.sf.high_fps_late_app_phase_offset_ns=50000
 debug.sf.phase_offset_threshold_for_next_vsync_ns=3000000
-debug.sf.showupdates=0
+debug.sf.show_updates=0
 debug.sf.showcpu=0
 debug.sf.showbackground=0
 debug.sf.showfps=0
 debug.sf.hw=1
 debug.gralloc.gfx_ubwc_disable=0
-debug.composition-type=hybrid
 persist.sys.composer.preferred_mode=performance
-"
+
 
 echo "$android_properties" | while IFS= read -r prop; do
     prop_name="${prop%%=*}"
@@ -647,17 +588,11 @@ fi
 
 # Prop Tweak
 resetprop -n logd.statistics false
-resetprop -n ro.logd.statistics false
 resetprop -n persist.logd.statistics false
-resetprop -n logd.kernel false
-resetprop -n logcat.live disable
-resetprop -n logcast.live disable
-resetprop -n live.logcat disable
 resetprop -n persist.sys.offlinelog.kernel 1
 resetprop -n persist.sys.offlinelog.logcat 1
 resetprop -n ro.logd.size 0
 resetprop -n ro.compcache.default 0
-resetprop -n ro.kernel.android.checkjni 0
 resetprop -n ro.kernel.qemu.gles 0
 resetprop -n ro.kernel.checkjni 0
 resetprop -n ro.sf.battery_log 0
@@ -666,7 +601,6 @@ resetprop -n profiler.debugmonitor false
 resetprop -n debug.egl.swap_interval 0
 resetprop -n persist.sys.use_dithering 1
 resetprop -n debug.sf.enable_gl 1
-resetprop -n debug.sf.show_updates 0
 resetprop -n ro.launcher.blur.appLaunch 0
 resetprop -n ro.surface_flinger.supports_background_blur 0
 resetprop -n ro.sf.blurs_are_expensive 0
@@ -681,17 +615,6 @@ resetprop -n debug.sf.disable_client_composition_cache 1
 resetprop -n debug.renderengine.backend skiaglthreaded
 resetprop -n debug.hwui.skia_atrace_enabled false
 resetprop -n ro.surface_flinger.enable_frame_rate_override false
-# Aggressive Ram Killer (Prop)
-resetprop -n ro.config.dha_cached_max 8
-resetprop -n ro.config.dha_empty_max 15
-resetprop -n ro.config.dha_empty_init 8 
-resetprop -n ro.config.dha_lmk_scale 0.7
-resetprop -n ro.config.dha_th_rate 1.0
-resetprop -n ro.config.sdha_apps_bg_max 6
-resetprop -n ro.config.sdha_apps_bg_min 2
-resetprop -n ro.surface_flinger.has_wide_color_display false    
-resetprop -n ro.surface_flinger.use_color_management false
-resetprop -n ro.surface_flinger.vsync_event_phase_offset_ns 3000000
 
 # TCP settings
 if echo 'reno' > "/proc/sys/net/ipv4/tcp_congestion_control"; then
@@ -711,18 +634,6 @@ if echo 1 > /proc/sys/kernel/sched_boost; then
     log_tweak "Enabled sched boost" 1
 else
     log_tweak "Failed to enable sched boost" 0
-fi
-
-if echo N > /sys/module/msm_thermal/parameters/enabled; then
-    log_tweak "Set msm_thermal enabled to N" 1
-else
-    log_tweak "Failed to set msm_thermal enabled" 0
-fi
-
-if echo 0 > /sys/module/msm_thermal/core_control/enabled; then
-    log_tweak "Disabled core control for msm_thermal" 1
-else
-    log_tweak "Failed to disable core control for msm_thermal" 0
 fi
 
 if echo 0 > /sys/kernel/msm_thermal/enabled; then
@@ -778,30 +689,6 @@ if setprop debug.sf.enable_hwc_vds 0; then
     log_tweak "Disabled HWC VDS" 1
 else
     log_tweak "Failed to disable HWC VDS" 0
-fi
-
-if setprop debug.sf.early_app_phase_offset_ns 500000; then
-    log_tweak "Set early app phase offset to 500000" 1
-else
-    log_tweak "Failed to set early app phase offset" 0
-fi
-
-if setprop debug.sf.early_gl_phase_offset_ns 3000000; then
-    log_tweak "Set early GL phase offset to 3000000" 1
-else
-    log_tweak "Failed to set early GL phase offset" 0
-fi
-
-if setprop debug.sf.early_gl_app_phase_offset_ns 15000000; then
-    log_tweak "Set early GL app phase offset to 15000000" 1
-else
-    log_tweak "Failed to set early GL app phase offset" 0
-fi
-
-if setprop debug.sf.early_phase_offset_ns 500; then
-    log_tweak "Set early phase offset to 500000" 1
-else
-    log_tweak "Failed to set early phase offset" 0
 fi
 
 if setprop debug.sf.late.sf.duration 27600000; then

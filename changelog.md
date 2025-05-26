@@ -1,3 +1,9 @@
+# SuperMario Tweaker V2.1.0 - Changelog
+- Delete unnecessary tweaks to fix bootloop for some devices
+- Delete CPU & GPU spoofing to prevent bugs "especially with camera"
+- Fixes here and there
+- New Banner :)
+
 # SuperMario Tweaker V2.0.1 - Changelog
 - Delete wrong " from customize.sh to fix installation process
 

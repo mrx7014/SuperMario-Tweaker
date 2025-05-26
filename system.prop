@@ -1,5 +1,4 @@
 # SuperMario Tweaker
-# V2.0.0
 ### By: MRX7014
 
 # build.prop tweaks
@@ -32,10 +31,6 @@ windowsmgr.max_events_per_sec=300
 # Battery Optimization
 ro.ril.disable.power.collapse=0
 ro.ril.power_collapse=1
-
-# Spoof CPU & GPU // SnapDragon 8 Elite & Adreno830
-ro.soc.model=SM8750-3-AB
-ro.gpu.model=Adreno830
 
 # GPU vulkan-capable (Use GPU instead of CPU while rendering)
 debug.composition.type=gpu
@@ -97,9 +92,7 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 
 # RAM Optimization
 persist.sys.purgeable_assets=1
-ro.config.low_ram=false
 ro.kernel.android.checkjni=0
-persist.sys.zram_enabled=1
 ro.sys.fw.trim_enable_memory=true
 dalvik.vm.verify-bytecode=false
 debug.kill_allocating_task=0
