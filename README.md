@@ -1,4 +1,4 @@
-# SuperMario Tweaker
+# SuperMario Tweaker - Beta
 
 <div align="center">
   <img src="assets/SMTW-Banner.jpg" alt="" />
