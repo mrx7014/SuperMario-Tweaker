@@ -132,3 +132,32 @@ debug.sf.showfps=0
 # More Tweaks
 debug.gfx.driver=1
 debug.egl.profiler=0
+
+# @LaFlameA1 Tweaks
+ro.HOME_APP_ADJ=1
+ro.FOREGROUND_APP_ADJ=0
+ro.VISIBLE_APP_ADJ=5
+ro.HIDDEN_APP_MIN_ADJ=8
+ro.SECONDARY_SERVER_ADJ=9
+ro.PERCEPTIBLE_APP_ADJ=4
+ro.HEAVY_WEIGHT_APP_ADJ=1
+ro.BACKUP_APP_ADJ=8
+ro.EMPTY_APP_ADJ=15
+ro.CPU_MIN_CHECK_DURATION=false
+ro.APP_SWITCH_DELAY_TIME=false
+dalvik.vm.dexopt-flags=m=y,v=n,o=v,u=n
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.dex2oat-filter=speed
+dalvik.vm.dex2oat-threads=4
+debug.hwui.disable_vsync=true
+debug.cpurend.vsync=false
+debug.qctwa.statusbar=1
+debug.renderengine.backend=skiaglthreaded
+debug.hwui.skia_atrace_enabled=false
+ro.surface_flinger.enable_frame_rate_override=false
+profiler.force_disable_ulog=true
+profiler.debugmonitor=false
+profiler.launch=false
+ro.config.nocheckin=1
+persist.vendor.sys.memplus.enable=false
+debug.atrace.tags.enableflags=0
