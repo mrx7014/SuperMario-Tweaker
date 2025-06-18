@@ -1,7 +1,7 @@
 id=SMTW
 name=SuperMario Tweaker
-version=v2.2.0
-versionCode=220
+version=v2.3.0
+versionCode=230
 author=MRX7014
 description=A tweaker module that can improve any device performance and stability (Gaming, Daily Useage, etc...)
 updateJson=https://raw.githubusercontent.com/MRX7014/SuperMario-Tweaker/master/update.json

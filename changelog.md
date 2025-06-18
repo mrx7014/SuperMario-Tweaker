@@ -1,3 +1,36 @@
+# SuperMario Tweaker v2.3.0 - Changelog
+
+🔄Updates:
+- Update Vulkan Version to `v25.1.3`
+- Add `Clear Cache` at action button
+- Readd old tweaks from `v2.0.1`
+- Minimalistic installation UI
+- New thumbnail
+- Add `SuperMarioTweaker-Banner` and `SMTW-Banner.jpg` at one folder `assets`
+
+🆕️Adds:
+
+New Tweaks From La Flame:
+- 🧠 Memory Management Tweaks
+Optimizes memory usage by prioritizing important apps and allowing the system to kill unimportant background apps more aggressively.
+
+- ⚙️ CPU Scheduling Tweaks
+Reduces delays when switching apps and improves responsiveness by adjusting CPU-related behaviors.
+
+- ☕ ART/Dalvik VM Tweaks
+Enhances app performance by optimizing how the Android Runtime compiles and runs applications.
+
+- 🖼️ Graphics & Rendering Tweaks
+Improves graphics performance and increases frame rates (FPS) by disabling VSync and enabling faster rendering techniques.
+
+- 📊 Profiler and Debugging Tweaks
+Disables system profiling, logging, and debugging tools to reduce background load and improve privacy.
+
+- 📦 Vendor-Specific Tweaks
+Disables features like MemoryPlus that emulate virtual RAM, which may slow down devices that already have sufficient physical RAM.
+
+<br />
+
 # SuperMario Tweaker v2.2.0 - Changelog 
 
 🔄Updates:
