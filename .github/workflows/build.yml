@@ -1,0 +1,57 @@
+name: build test package
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/build.yml'  # Workflow file
+      - 'update.json'                  # Update JSON (if necessary)
+      - '*'                             # Any other change in the root directory
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/build.yml'  # Workflow file
+      - 'update.json'                  # Update JSON (if necessary)
+      - '*'                             # Any other change in the root directory
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Full history, required for accurate commit count
+
+      - name: Set variables
+        id: setup
+        run: |
+          COMMIT_NUM=$(git rev-list --count HEAD)
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          VERSION=$(jq -r .version update.json)
+          ARTIFACT_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+          echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
+      
+      - name: Prepare clean artifact folder
+        run: |
+          mkdir clean
+          rsync -av --progress ./ clean/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'README.md' \
+            --exclude 'SMTW-Banner.jpg' \
+            --exclude 'update.json' \
+            --exclude 'UPDATE.md' \
+            --exclude '*.zip'
+      
+      - name: Upload cleaned artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: clean/
+          if-no-files-found: error
+          compression-level: 6
+          overwrite: true
