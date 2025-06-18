@@ -32,7 +32,7 @@ jobs:
           COMMIT_NUM=$(git rev-list --count HEAD)
           COMMIT_HASH=$(git rev-parse --short HEAD)
           VERSION=$(jq -r .version update.json)
-          ARTIFACT_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}"
+          ARTIFACT_NAME="SMTW_${VERSION}-${COMMIT_NUM}-${COMMIT_HASH}-Exynos"
           echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
       
       - name: Prepare clean artifact folder
