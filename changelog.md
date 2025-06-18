@@ -1,6 +1,6 @@
 # SuperMario Tweaker v2.3.0 - Changelog
 
-🔄Updates:
+### 🔄 Updates:
 - Update Vulkan Version to `v25.1.3`
 - Add `Clear Cache` at action button
 - Readd old tweaks from `v2.0.1`
@@ -8,9 +8,9 @@
 - New thumbnail
 - Add `SuperMarioTweaker-Banner` and `SMTW-Banner.jpg` at one folder `assets`
 
-🆕️Adds:
+### 🆕️ Adds:
 
-New Tweaks From La Flame:
+### New Tweaks From La Flame:
 - 🧠 Memory Management Tweaks
 Optimizes memory usage by prioritizing important apps and allowing the system to kill unimportant background apps more aggressively.
 
