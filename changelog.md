@@ -1,6 +1,7 @@
 # SuperMario Tweaker v2.3.0 - Changelog
 
 🔄Updates:
+- Update Vulkan Version to `v25.1.3`
 - Add `Clear Cache` at action button
 - Readd old tweaks from `v2.0.1`
 - Minimalistic installation UI
