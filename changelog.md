@@ -1,3 +1,8 @@
+# SuperMario Tweaker v3.0.1 - Snapdragon
+
+### 🔄 Updates & Fixes
+- Fix Bootloop Issues and SystemUI Crashes
+
 # SuperMario Tweaker v3.0.0 - Snap
 
 ### 🔄 Updates & Fixes
