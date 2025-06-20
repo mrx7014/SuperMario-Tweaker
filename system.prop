@@ -26,6 +26,9 @@ ro.min_pointer_dur=8
 ro.ril.disable.power.collapse=0
 ro.ril.power_collapse=1
 
+# GPU vulkan-capable (Use GPU instead of CPU while rendering)
+debug.composition.type=gpu
+
 # Misc tweaks
 ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=1000
@@ -54,8 +57,16 @@ persist.sys.lmk.reportkills=false
 debug.hwui.render_dirty_regions=false
 # More info at: https://developer.arm.com/documentation/ka001862/latest
 
+# Increase cached app limit
+ro.vendor.qti.sys.fw.bg_apps_limit=600
+ro.vendor.qti.sys.fw.bservice_limit=60
+
 # iorapd prop
 ro.iorapd.enable=true
+
+# Disable rotator downscale
+vendor.display.disable_rotator_downscale=true
+# More info at: https://github.com/nitrogen-project/android_device_xiaomi_surya/commit/e4d576deb3f25c09b2a85ef9738fad61afec6ce8#diff-331eb533fa0b3a1aaaff624db1027b418cffa5780caecf042f25ef8de935a34a
 
 # Enable usage of dex2oat64
 dalvik.vm.dex2oat64.enabled=true
@@ -77,11 +88,19 @@ persist.sys.NV_POWERMODE=1
 persist.sys.NV_STEREO_CONTROL=0
 persist.sys.NV_STEREO_EYES=0
 
-# GPU Optimization
+# GPU Optimization (Adreno)
+debug.hwui.use_vulkan=true
+ro.product.gpu.driver=1
 video.accelerate.hw=1
+debug.gralloc.gfx_ubwc_disable=0
 persist.sys.composer.preferred_mode=performance
 
 # Enhance
+vendor.perf.framepacing.enable=1
+vendor.display.vds_allow_hwc=1
+vendor.display.enable_optimize_refresh=1
+vendor.display.use_smooth_motion=1
+vendor.display.idle_time=0
 debug.sf.treat_170m_as_sRGB=1
 
 # Touch Optimization
@@ -141,3 +160,20 @@ profiler.launch=false
 ro.config.nocheckin=1
 persist.vendor.sys.memplus.enable=false
 debug.atrace.tags.enableflags=0
+
+# Tweaks From Hell
+debug.sf.disable_client_composition_cache=1
+ro.config.low_ram=true
+ro.config.avoid_gfx_accel=false
+debug.hwui.renderer=skiagl
+debug.hwui.use_buffer_age=false
+debug.hwui.disable_scissor_opt=true
+debug.hwui.drop_shadow_cache_size=12
+debug.hwui.gradient_cache_size=1
+debug.hwui.layer_cache_size=32
+debug.hwui.path_cache_size=32
+debug.hwui.texture_cache_size=32
+debug.hwui.texture_cache_flushrate=0
+ro.input.noresample=1
+ro.input.delay=0
+touch.pressure.scale=0.001

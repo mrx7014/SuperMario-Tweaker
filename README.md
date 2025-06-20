@@ -50,13 +50,13 @@
 
 ## 📌 System Requirements
 
-- Android 9 or higher (Recommended: Android 13–14)
+- Android 9 or higher
 - Compatible with Magisk / KernelSU / APatch  
 
 ## ❓ FAQ
 
 **Q:** Will this work on all Android versions?  
-**A:** Yes, but Android 13–14 (SDK 33/34) is recommended.
+**A:** Yes, But Android 9+ is recommended.
 
 **Q:** Can I use this with other tweak modules?  
 **A:** Not recommended. Conflicts may happen, especially with DT Modules or anything that modifies props or thermal settings.
@@ -70,6 +70,12 @@
 
 **Developed & maintained by:** MRX7014
 
-**Special thanks to**: [@ZG089](https://github.com/ZG089)
+**Special thanks to**: 
+[@ZG089](https://github.com/ZG089) For His Development and Fixes
+[@LaFlame](https://t.me/@LaFlameA1) For His Tweaks For Snapdragon Version
+[@Omar](https://t.me/@helicopterr_helicopterr) For His Tweaks For MediaTek Verison
+**And All Testers**
+
+---
 
 For updates and support, join our Telegram channel: **[@MRX7014Cloud](https://t.me/MRX7014Cloud)**
