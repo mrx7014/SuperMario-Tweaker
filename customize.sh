@@ -21,6 +21,6 @@ sleep 2
 ui_print "Done"
 ui_print ""
 ui_print "✅ Tweaks Applied Successfully!"
-ui_print "〽️ SuperMario-Tweaker v3.0.0 - Snap"
+ui_print "〽️ SuperMario-Tweaker v3.0.1 - Snap"
 ui_print "📢 Join Telegram: @MRX7014Cloud"
 ui_print "💡 Reboot to activate changes"
