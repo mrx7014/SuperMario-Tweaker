@@ -21,7 +21,7 @@ jobs:
 
      - name: Build SuperMario Tweaker Snap Verison
        run: |
-          zip -r SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Snap.zip . -x ".git*" -x ".github*" -x "README.md" -x "changelog.md" -x "update.json"
+          zip -r SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Snap.zip . -x ".git*" -x ".github*" -x "README.md" -x "changelog.md" -x "update.json"
 
      - name: Move Snap Verison File to Workspace
        run: mv SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Snap.zip /tmp/
@@ -33,7 +33,7 @@ jobs:
 
      - name: Build SuperMario Tweaker MTK Verison
        run: |
-          zip -r SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_MTK.zip . -x ".git*" -x ".github*" -x "README.md" -x "changelog.md" -x "update.json"
+          zip -r SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_MTK.zip . -x ".git*" -x ".github*" -x "README.md" -x "changelog.md" -x "update.json"
 
      - name: Move MTK Verison File to Workspace
        run: mv SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_MTK.zip /tmp/
@@ -45,16 +45,16 @@ jobs:
 
      - name: Build SuperMario Tweaker Exynos Verison
        run: |
-          zip -r SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Exynos.zip . -x ".git*" -x ".github*" -x "README.md" -x "changelog.md" -x "update.json"
+          zip -r SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Exynos.zip . -x ".git*" -x ".github*" -x "README.md" -x "changelog.md" -x "update.json"
 
      - name: Move Exynos Verison File to Workspace
        run: mv SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Exynos.zip /tmp/
 
      - name: Move Files Back to Current Directory
        run: |
-          mv /tmp/SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Snap.zip .
-          mv /tmp/SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_MTK.zip .
-          mv /tmp/SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Exynos.zip .
+          mv /tmp/SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Snap.zip .
+          mv /tmp/SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_MTK.zip .
+          mv /tmp/SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Exynos.zip .
 
      - name: Create a Git Tag
        run: |
@@ -68,17 +68,17 @@ jobs:
        with:
           name: SMTW
           path: |
-            SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Snap.zip
-            SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_MTK.zip
-            SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Exynos.zip
+            SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Snap.zip
+            SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_MTK.zip
+            SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Exynos.zip
 
      - name: Create GitHub Release
        uses: softprops/action-gh-release@v1
        with:
           files: |
-            SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Snap.zip
-            SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_MTK.zip
-            SuperMarioTweaker-${{ github.event.inputs.samsung_version }}_Exynos.zip
+            SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Snap.zip
+            SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_MTK.zip
+            SuperMarioTweaker-${{ github.event.inputs.smtw_version }}_Exynos.zip
           tag_name: ${{ github.event.inputs.smtw_version }}
           release_name: SMTW Module
           body: |
