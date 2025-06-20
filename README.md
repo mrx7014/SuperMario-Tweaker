@@ -99,9 +99,13 @@
 **Developed & maintained by:** MRX7014
 
 **Special thanks to**: 
-[@ZG089](https://github.com/ZG089) For His Development and Fixes
-[@LaFlame](https://t.me/@LaFlameA1) For His Tweaks For Snapdragon Version
-[@Omar](https://t.me/@helicopterr_helicopterr) For His Tweaks For MediaTek Verison
+
+**[@ZG089](https://github.com/ZG089) For His Development and Fixes**
+
+**[@LaFlame](https://t.me/@LaFlameA1) For His Tweaks For Snapdragon Version**
+
+**[@Omar](https://t.me/@helicopterr_helicopterr) For His Tweaks For MediaTek Verison**
+
 **And All Testers**
 
 ---
