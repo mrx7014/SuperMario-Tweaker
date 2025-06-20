@@ -4,7 +4,7 @@
   <img src="assets/SMTW-Banner.jpg" alt="" />
   <br />
 
-[![Module Version](https://img.shields.io/badge/Module_Version-v2.3.0-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v2.3.0)
+[![Module Version](https://img.shields.io/badge/Module_Version-v3.0.0-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v3.0.0)
 [![Download](https://img.shields.io/github/downloads/mrx7014/SuperMario-Tweaker/total?style=for-the-badge&cacheSeconds=2)](https://github.com/mrx7014/SuperMario-Tweaker/releases)
 [![Channel](https://img.shields.io/badge/Follow_Channel-MRX7014Cloud-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014cloud)
 [![Personal acc on TG](https://img.shields.io/badge/Contact_Developer_via-Telegram-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014)
@@ -15,7 +15,7 @@
   
   <br />
   
-**Working on Snapdragon only**
+**Working on Snapdragon, Exynos, and MediaTek (Check Branches)**
   
 </div>
 
@@ -27,7 +27,7 @@
 - **Faster boot times** & reduced startup lag  
 - **Improved touch response** & smoother UI  
 - **Stable FPS** for enhanced gaming performance  
-- **Vulkan 1.4 support** (via Mesa Turnip v25.0.3) for better graphics  
+- **Vulkan 1.4 support** (via Mesa Turnip v25.1.3) for better graphics  
 - **Optimized RAM management** & faster app switching  
 - **Battery life improvements** with deep Doze & background control  
 - **CPU & GPU optimizations** for high performance    
@@ -98,9 +98,12 @@
 
 **Developed & maintained by:** MRX7014
 
-**Special thanks to**: [@ZG089](https://github.com/ZG089)
+**Special thanks to**: 
+[@ZG089](https://github.com/ZG089) For His Development and Fixes
+[@LaFlame](https://t.me/@LaFlameA1) For His Tweaks For Snapdragon Version
+[@Omar](https://t.me/@helicopterr_helicopterr) For His Tweaks For MediaTek Verison
+**And All Testers**
 
-**Thanks to:** Open-source Vulkan (Mesa) community and all testers  
-
+---
 
 For updates and support, join our Telegram channel: **[@MRX7014Cloud](https://t.me/MRX7014Cloud)**

@@ -1,3 +1,20 @@
+# SuperMario Tweaker v3.0.0 - Snap
+
+### 🔄 Updates & Fixes
+- Improve `action.sh` code
+- Fix Status Bar Lags When Pull Down
+- Some Improvements and Fixes
+
+### 🆕️Adds:
+- Enabled Skia renderer for smoother UI.
+- Reduced touch delay and improved response time.
+- Disabled backpressure and caching to lower frame latency.
+- Tuned graphics cache sizes for better performance.
+- Forced GPU usage instead of CPU where possible.
+- Boosted UI thread priority for faster animations.
+- Enabled memory optimizations and disabled system logs.
+- Applied general power-saving and fast boot tweaks.
+
 # SuperMario Tweaker v2.3.0 - Changelog
 
 ### 🔄 Updates:
