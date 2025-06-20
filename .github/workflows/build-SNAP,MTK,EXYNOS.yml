@@ -1,4 +1,4 @@
-name: Build SuperMario Tweaker Module
+name: Build SuperMario Tweaker Module All Versions
 
 on:
   workflow_dispatch:
