@@ -1,8 +1,10 @@
 # SuperMario Tweaker v3.0.0 - Snap
 
 ### 🔄 Updates & Fixes
+- Now Support Android 9+
 - Improve `action.sh` code
 - Fix Status Bar Lags When Pull Down
+- Reduce Module Size a Little
 - Some Improvements and Fixes
 
 ### 🆕️Adds:

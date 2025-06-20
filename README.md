@@ -51,7 +51,7 @@
 
 ## 📌 System Requirements
 
-- Android 10 or higher (Recommended: Android 13–14)  
+- Android 9 or higher (Recommended: Android 13–14 For Vulkan)  
 - Adreno 600/700 series GPU (for Vulkan Turnip support)
 - Compatible with Magisk / KernelSU / APatch  
 
@@ -81,7 +81,7 @@
 ## ❓ FAQ
 
 **Q:** Will this work on all Android versions?  
-**A:** Yes, but Android 13–14 (SDK 33/34) is recommended for full Vulkan 1.4 support.
+**A:** Yes, But Android 9+ is recommended. (Android 13–14 (SDK 33/34) is recommended for full Vulkan 1.4 support.)
 
 **Q:** Do I need a specific GPU?  
 **A:** Vulkan 1.4 requires Adreno 6xx or 7xx GPUs. Other devices can still benefit from the general tweaks.
