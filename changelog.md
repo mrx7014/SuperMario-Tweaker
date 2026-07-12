@@ -1,3 +1,51 @@
+# SuperMario Tweaker v4.0.0
+## Changelog
+
+### 🚀 Complete Rewrite
+- Rebuilt the module from the ground up.
+- Improved overall structure for easier maintenance.
+- Cleaner and more organized project layout.
+
+### ⚡ Performance Improvements
+- Completely rewritten service script.
+- Waits for full boot completion before applying tweaks.
+- Optimized Low Memory Killer (LMK) behavior.
+- Disabled Adaptive LMK.
+- Improved Swap management.
+- Optimized process kill timeout.
+- Improved freezer control.
+- Increased cached process limit.
+- Disabled Cached Apps Freezer.
+- Disabled Process Compaction.
+- Increased Phantom Process limit.
+
+### 🛠 System Optimizations
+- Cleaned and simplified system properties.
+- Removed outdated and ineffective tweaks.
+- Improved compatibility with modern Android versions.
+- Better stability across different ROMs.
+- Reduced unnecessary system modifications.
+
+### 🎨 User Experience
+- Updated installation messages.
+- Updated module information.
+- Updated Telegram link.
+- Improved installation experience.
+- Improved action script
+
+### 🗑 Removed
+- Removed Snapdragon branding.
+- Removed legacy logging system.
+- Removed obsolete SurfaceFlinger tweaks.
+- Removed outdated GPU tweaks.
+- Removed deprecated RAM tweaks.
+- Removed unused Android properties.
+- Removed legacy commands with no effect on modern Android versions.
+
+### 📦 Miscellaneous
+- Correct `versionCode`.
+- Improved compatibility with the latest Magisk releases.
+
 # SuperMario Tweaker v3.0.1 - Snapdragon
 
 ### 🔄 Updates & Fixes

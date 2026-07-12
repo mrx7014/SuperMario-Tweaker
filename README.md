@@ -1,113 +1,215 @@
-# SuperMario Tweaker
-
 <div align="center">
-  <img src="assets/SMTW.jpg" alt="" />
-  <br />
 
-[![Module Version](https://img.shields.io/badge/Module_Version-v3.0.1-44cc11?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/tag/v3.0.1)
-[![Download](https://img.shields.io/github/downloads/mrx7014/SuperMario-Tweaker/total?style=for-the-badge&cacheSeconds=2)](https://github.com/mrx7014/SuperMario-Tweaker/releases)
-[![Channel](https://img.shields.io/badge/Follow_Channel-MRX7014Cloud-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014cloud)
-[![Personal acc on TG](https://img.shields.io/badge/Contact_Developer_via-Telegram-252850?style=for-the-badge&color=blue&logo=telegram)](https://t.me/mrx7014)
-[![Donation](https://img.shields.io/badge/Support%20Development-black?style=for-the-badge&logo=buymeacoffee&logoColor=black&logoSize=auto&color=%23FFDD00&cacheSeconds=2&link=https%3A%2F%2Fbuymeacoffee.com%2Fzg089&link=https%3A%2F%2Fbuymeacoffee.com%2Fzg089)](https://buymeacoffee.com/mrx7014)
-![Built with](https://img.shields.io/badge/Made_with-Love-red?style=for-the-badge)
-  
-**Boost your Android device's performance, battery life, and gaming experience with SuperMario Tweaker!**
-  
-  <br />
-  
-**Working on Snapdragon, Exynos, and MediaTek (Check Branches)**
-  
+<img src="assets/SMTW.jpg" alt="SuperMario Tweaker Banner" width="100%"/>
+
+# 🍄 SuperMario Tweaker
+
+**A system-level performance module for rooted Android — smoother UI, faster apps, smarter memory management.**
+
+[![Version](https://img.shields.io/badge/Version-v4.0.0-success?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/mrx7014/SuperMario-Tweaker/total?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases)
+[![Android](https://img.shields.io/badge/Android-10--16-brightgreen?style=for-the-badge&logo=android)](#️-compatibility)
+[![Telegram](https://img.shields.io/badge/Telegram-MRXSSpace-229ED9?style=for-the-badge&logo=telegram)](https://t.me/mrxsspace)
+
 </div>
 
 ---
 
+## 📖 Table of Contents
 
-## 🚀 Features
-
-- **Faster boot times** & reduced startup lag  
-- **Improved touch response** & smoother UI  
-- **Stable FPS** for enhanced gaming performance  
-- **Vulkan 1.4 support** (via Mesa Turnip v25.1.3) for better graphics  
-- **Optimized RAM management** & faster app switching  
-- **Battery life improvements** with deep Doze & background control  
-- **CPU & GPU optimizations** for high performance    
-- **Signature spoofing**  
-- **Disabled Google bloatware** & unnecessary logging    
-- **SurfaceFlinger & HWUI tweaks** for better UI rendering  
-- **Dynamic CPU-GPU composition** for smoother multitasking  
-- **Optimized app launch** & faster response with IORAPD prefetching  
-- **Enhanced gaming experience** with CPU frequency locking & video mode optimizations
+- [Overview](#-overview)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Requirements](#-requirements)
+- [Compatibility](#️-compatibility)
+- [FAQ](#-faq)
+- [Reporting Issues](#-reporting-issues)
+- [Contributing](#-contributing)
+- [Disclaimer](#️-disclaimer)
+- [Credits](#-credits)
+- [Community](#-community)
+- [Support the Project](#-support-the-project)
 
 ---
 
-## ⚙️ Installation
+## 🚀 Overview
 
-1. Uninstall any conflicting modules (e.g., old DT Module).  
-2. Flash the module via Magisk, KernelSU, or APatch.  
-3. Reboot your device.  
-4. Enjoy improved performance and stability!
+**SuperMario Tweaker** is a lightweight, root-level optimization module that tunes CPU scheduling, memory management, I/O, and UI rendering for a smoother, faster, and more responsive Android experience.
+
+Rather than applying a fixed set of generic tweaks, the module detects your device's hardware and Android version at flash/boot time and applies only the optimizations that are safe and compatible — reducing the risk of instability compared to one-size-fits-all tweak scripts.
+
+Built for daily use, not just benchmark screenshots.
+
+**Compatible with:**
+
+| Root Solution | Support |
+|---|:---:|
+| Magisk | ✅ |
+| KernelSU | ✅ |
+| APatch | ✅ |
 
 ---
 
-## 📌 System Requirements
+## ✨ Features
 
-- Android 9 or higher (Recommended: Android 13–14 For Vulkan)  
-- Adreno 600/700 series GPU (for Vulkan Turnip support)
-- Compatible with Magisk / KernelSU / APatch  
+| Category | What it does |
+|---|---|
+| 🚀 **Tweak Engine** | Fully rewritten core for better stability and lower overhead |
+| ⚡ **App Launch Speed** | Faster cold/warm starts, reduced UI jank |
+| 🎮 **Gaming Performance** | CPU/GPU scheduling tuned for sustained frame pacing |
+| 🧠 **Memory Management** | Smarter RAM allocation and swap behavior |
+| 📱 **UI Smoothness** | Reduced animation stutter and input latency |
+| 🔥 **CPU Scheduling** | Optimized governor and scheduler behavior |
+| 🎯 **Background Processes** | Better control over background task priority |
+| 💾 **Storage & Filesystem** | Tuned I/O scheduler and filesystem behavior |
+| 🛡 **Logging** | Reduced unnecessary system logging overhead |
+| 🔋 **Battery Efficiency** | Lower idle drain without sacrificing performance |
+| 🧹 **Cache Cleaning** | Built-in utility for periodic cache maintenance |
+| 🌐 **Online Updates** | In-module update checks and delivery |
 
 ---
 
-## 🎮 Vulkan 1.4 Compatibility (Mesa Turnip)
+## 📲 Installation
 
-> **Note:** Performance may vary depending on your SoC and kernel.
+1. **Back up your device** (recommended for any system-level module — see [Disclaimer](#️-disclaimer)).
+2. **Remove any conflicting tweak modules** — running SuperMario Tweaker alongside another performance module can cause conflicts.
+3. **Download** the latest release from the [Releases page](https://github.com/mrx7014/SuperMario-Tweaker/releases/latest).
+4. **Flash** the ZIP using your manager of choice:
+   - Magisk → Modules → Install from storage
+   - KernelSU → Modules → Install
+   - APatch → Modules → Install
+5. **Reboot** your device.
+6. Done — enjoy a faster, smoother Android experience.
 
-| Name                                            | Status | Notes                                                                                                                     |
-|-------------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------------|
-| 3D Mark                                         | ✅     |                                                                                                                           |
-| GRID™ Autosport                                 | ✅     | Working.(60fps)                                                          |
-| SpongeBob SquarePants Battle For Bikini Bottom  | ✅     | Working,Poor Performance.(20-30fps)                                      |
-| Carx Street                                     | ✅     | Working,Poor Performance.(25-30fps)                                      |
-| Dolphin Emulator                                | ✅     | Working.                                                                 |
-| PPSSPP                                          | ✅     | Working.                                                                 |
-| EggNS                                           | ✅     | Working.                                                                 |
-| ANGLE (com.android.angle)                       | ✅     |                                                                                                                           |
-| GTA Triology-Definitive Edition                 | ✅     | Working,Poor Performance.                                                   |
-| Call of Duty WarZone Mobile                     | ✅     | Working,Texture Bugs,Poor Performance.                                    |
-| Hitman Blood Money : Reprisal                   | ✅     | Working, 60 fps Medium Graphics.                                        |
+> 💡 **Tip:** If something feels off after flashing, disable the module from your manager and reboot before filing a report — this quickly rules out conflicts with other mods.
 
+---
+
+## 📋 Requirements
+
+- Android 10 or newer
+- Root access via Magisk, KernelSU, or APatch
+- Unlocked bootloader with root already configured
+
+---
+
+## ⚙️ Compatibility
+
+| Android Version | Status |
+|---|:---:|
+| Android 10 | ✅ |
+| Android 11 | ✅ |
+| Android 12 | ✅ |
+| Android 13 | ✅ |
+| Android 14 | ✅ |
+| Android 15 | ✅ |
+| Android 16 | ✅ |
+
+> Optimizations are applied conditionally based on detected hardware and Android version. If a tweak isn't compatible with your setup, it's skipped rather than force-applied.
 
 ---
 
 ## ❓ FAQ
 
-**Q:** Will this work on all Android versions?  
-**A:** Yes, But Android 9+ is recommended. (Android 13–14 (SDK 33/34) is recommended for full Vulkan 1.4 support.)
+<details>
+<summary><b>Does it work on every device?</b></summary><br>
 
-**Q:** Do I need a specific GPU?  
-**A:** Vulkan 1.4 requires Adreno 6xx or 7xx GPUs. Other devices can still benefit from the general tweaks.
+It's designed to work broadly across Android devices by auto-detecting hardware and only applying compatible optimizations. Heavily customized OEM skins or non-standard kernels may see more limited gains than AOSP-based ROMs.
+</details>
 
-**Q:** Can I use this with other tweak modules?  
-**A:** Not recommended. Conflicts may happen, especially with DT Modules or anything that modifies props or thermal settings.
+<details>
+<summary><b>Can I use it with another tweaking module?</b></summary><br>
 
-**Q:** How do I uninstall it?  
-**A:** Simply remove it via your Magisk/KSU manager and reboot.
+Not recommended. Running multiple tweak modules at once can cause conflicting overrides and unpredictable behavior. Stick to one at a time.
+</details>
+
+<details>
+<summary><b>Is it safe?</b></summary><br>
+
+Every tweak is selected for daily-driver stability, not just benchmark numbers. That said, as with any system-level module, we recommend keeping a recovery backup (TWRP/OrangeFox) before flashing.
+</details>
+
+<details>
+<summary><b>How do I uninstall it?</b></summary><br>
+
+Remove the module from your Magisk/KernelSU/APatch manager and reboot. No manual cleanup required.
+</details>
+
+<details>
+<summary><b>Will it trip SafetyNet / Play Integrity?</b></summary><br>
+
+The module itself only touches performance-related system parameters. If you're already passing integrity checks with your current root setup, SuperMario Tweaker shouldn't change that.
+</details>
+
+<details>
+<summary><b>I found a bug or my device behaves oddly — what do I do?</b></summary><br>
+
+See [Reporting Issues](#-reporting-issues) below.
+</details>
 
 ---
 
-## 🧑‍💻 Credits
+## 🐛 Reporting Issues
 
-**Developed & maintained by:** MRX7014
+Open a [GitHub Issue](https://github.com/mrx7014/SuperMario-Tweaker/issues/new) and include:
 
-**Special thanks to**: 
+- Device model and chipset
+- Android version and ROM (stock/custom)
+- Root manager and version (Magisk/KernelSU/APatch)
+- SuperMario Tweaker version
+- Steps to reproduce, and logs if available (`dmesg`, logcat, or module log)
 
-**[@ZG089](https://github.com/ZG089) For His Development and Fixes**
-
-**[@LaFlame](https://t.me/@LaFlameA1) For His Tweaks For Snapdragon Version**
-
-**[@Omar](https://t.me/@helicopterr_helicopterr) For His Tweaks For MediaTek Verison**
-
-**And All Testers**
+Reports without this info are much harder to act on — the more detail, the faster a fix.
 
 ---
 
-For updates and support, join our Telegram channel: **[@MRX7014Cloud](https://t.me/MRX7014Cloud)**
+## 🤝 Contributing
+
+Contributions, fixes, and device-specific tweak profiles are welcome.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/my-tweak`)
+3. Commit your changes with a clear message
+4. Open a Pull Request describing what changed and why
+
+If you're proposing a new tweak, please include the device(s) you tested it on.
+
+---
+
+## ⚠️ Disclaimer
+
+This module modifies system-level behavior on a rooted device. While every tweak is tested for daily-driver stability:
+
+- Flashing any system module carries inherent risk.
+- Keep a **recovery backup** (TWRP/OrangeFox) before installing.
+- The maintainers are not responsible for bootloops, data loss, or bricked devices resulting from misuse or incompatible configurations.
+- Use at your own risk, and always test after major Android/ROM updates.
+
+---
+
+## ❤️ Credits
+
+Developed by **[MRX7014](https://github.com/mrx7014)**
+
+**Special thanks**
+- [**@ZG089**](https://github.com/ZG089) — development and fixes
+- All testers who helped shape this release ❤️
+
+---
+
+## 📢 Community
+
+Join the Telegram channel for updates, support, and discussion:
+
+**[t.me/mrxsspace](https://t.me/mrxsspace)**
+
+---
+
+## ⭐ Support the Project
+
+If **SuperMario Tweaker** improved your device's performance, consider starring the repository — it helps others discover the project and supports future development.
+
+<div align="center">
+
+🍄 **Thanks for using SuperMario Tweaker!**
+</div>
