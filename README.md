@@ -6,7 +6,7 @@
 
 **A system-level performance module for rooted Android — smoother UI, faster apps, smarter memory management.**
 
-[![Version](https://img.shields.io/badge/Version-v4.0.0-success?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/latest)
+[![Version](https://img.shields.io/badge/Version-v5.0.0-success?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/mrx7014/SuperMario-Tweaker/total?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases)
 [![Android](https://img.shields.io/badge/Android-10--16-brightgreen?style=for-the-badge&logo=android)](#️-compatibility)
 [![Telegram](https://img.shields.io/badge/Telegram-MRXSSpace-229ED9?style=for-the-badge&logo=telegram)](https://t.me/mrxsspace)
@@ -59,6 +59,8 @@ Built for daily use, not just benchmark screenshots.
 | 🎮 **Gaming Performance** | CPU/GPU scheduling tuned for sustained frame pacing |
 | 🧠 **Memory Management** | Smarter RAM allocation and swap behavior |
 | 📱 **UI Smoothness** | Reduced animation stutter and input latency |
+| 🌐 **WebUI** | Display Engine to control screen saturation |
+| 🖼 **Pixel Goodies** | Unlimited Google Photos Storage |
 | 🔥 **CPU Scheduling** | Optimized governor and scheduler behavior |
 | 🎯 **Background Processes** | Better control over background task priority |
 | 💾 **Storage & Filesystem** | Tuned I/O scheduler and filesystem behavior |

@@ -1,3 +1,43 @@
+# SuperMario Tweaker v5.0.0
+
+## 🚀 Major Changes
+• Brand-new WebUI with a completely redesigned interface.
+• Added JSON-based configuration system for better customization.
+• Introduced standalone Display Configuration handler.
+• Reworked the module architecture for improved stability and maintainability.
+
+## ✨ New Features
+• New WebUI
+• Display configuration script
+• Unlimited Google Photos Storage
+• Expanded compatibility across more Android devices
+
+## ⚡ Performance
+• Optimized Activity Manager configuration
+• Improved Dalvik VM memory management
+• Enhanced ART/Dex optimization
+• Reworked LMKD parameters
+• Better background process handling
+• Disabled unnecessary Process Freezer behavior
+• Improved HWUI configuration
+
+## 🔧 Improvements
+• Refactored action.sh
+• Refactored service.sh
+• Refactored customize.sh
+• Refactored SuperMario-Tweaker.sh
+• Cleaner internal structure
+• Better overall module stability
+
+## 🗑 Removed
+• Removed legacy Vendor Init implementation.
+• Cleaned obsolete vendor initialization files.
+
+## 🐞 Fixes
+• Fixed several internal module issues.
+• Improved compatibility across different Android versions.
+• General code cleanup and optimization.
+
 # SuperMario Tweaker v4.0.0
 ## Changelog
 

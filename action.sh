@@ -11,7 +11,7 @@ abort() {
 
 step() {
     echo ""
-    echo "[$1/6] $2"
+    echo "[$1/7] $2"
 }
 
 done_msg() {
@@ -23,33 +23,63 @@ SYSTEM_CACHE=0
 DALVIK_CACHE=0
 TOTAL=0
 
+GPU_PATHS="/data/user_de /data/data /data_mirror"
+
 echo ""
 echo "🍄 SuperMario Cleaner"
 echo "Powered by SuperMario Tweaker"
 
 step 1 "Preparing cleaning environment..."
 sync
-sleep 0.5
 done_msg
 
-step 2 "Scanning GPU caches..."
+step 2 "Cleaning GPU shader caches..."
 
-GPU_CACHE=$(find /data/user_de /data/data /data_mirror 2>/dev/null \
-    \( -iname "*shader*" -o -iname "*graphitecache*" -o -iname "*gpucache*" \) | wc -l)
+GPU_CACHE=$(
+find $GPU_PATHS 2>/dev/null \
+\( \
+-iname "*shader*" \
+-o -iname "*gpucache*" \
+-o -iname "*graphitecache*" \
+-o -iname "*rendercache*" \
+-o -iname "*pipeline*" \
+-o -iname "*vulkan*" \
+-o -iname "*skia*" \
+\) | wc -l
+)
 
-find /data/user_de /data/data /data_mirror 2>/dev/null \
-    \( -iname "*shader*" -o -iname "*graphitecache*" -o -iname "*gpucache*" \) \
-    -exec rm -rf {} + || abort "Failed to clean GPU cache."
+find $GPU_PATHS 2>/dev/null \
+\( \
+-iname "*shader*" \
+-o -iname "*gpucache*" \
+-o -iname "*graphitecache*" \
+-o -iname "*rendercache*" \
+-o -iname "*pipeline*" \
+-o -iname "*vulkan*" \
+-o -iname "*skia*" \
+\) -exec rm -rf {} + || abort "Failed to clean GPU cache."
 
 done_msg
 
 step 3 "Cleaning system cache..."
 
-SYSTEM_CACHE=$(find /cache /data/cache /data/system/package_cache 2>/dev/null | wc -l)
+SYSTEM_CACHE=$(
+find \
+/cache \
+/data/cache \
+/data/system/package_cache \
+/data/system_ce \
+/data/system_de \
+/data/resource-cache \
+2>/dev/null | wc -l
+)
 
-rm -rf /cache/* 2>/dev/null
-rm -rf /data/cache/* 2>/dev/null
-rm -rf /data/system/package_cache/* 2>/dev/null
+[ -d /cache ] && rm -rf /cache/*
+[ -d /data/cache ] && rm -rf /data/cache/*
+[ -d /data/system/package_cache ] && rm -rf /data/system/package_cache/*
+rm -rf /data/system_ce/*/package_cache/* 2>/dev/null
+rm -rf /data/system_de/*/package_cache/* 2>/dev/null
+rm -rf /data/resource-cache/* 2>/dev/null
 
 done_msg
 
@@ -57,19 +87,31 @@ step 4 "Cleaning Dalvik / ART cache..."
 
 DALVIK_CACHE=$(find /data/dalvik-cache 2>/dev/null | wc -l)
 
-rm -rf /data/dalvik-cache/* 2>/dev/null
+[ -d /data/dalvik-cache ] && rm -rf /data/dalvik-cache/*
 
 done_msg
 
-step 5 "Syncing filesystem..."
+step 5 "Optimizing filesystem..."
+
 sync
-sleep 0.5
+
+fstrim -v /data >/dev/null 2>&1
+fstrim -v /cache >/dev/null 2>&1
+
+sync
+
 done_msg
+
+step 6 "Generating report..."
 
 TOTAL=$((GPU_CACHE + SYSTEM_CACHE + DALVIK_CACHE))
 
-step 6 "Generating report..."
-sleep 0.5
+done_msg
+
+step 7 "Finishing..."
+
+sync
+
 done_msg
 
 echo ""
@@ -77,25 +119,30 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "            👑 MISSION COMPLETE"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
+
 printf "🧹 GPU Shader Cache      ✔ %d items\n" "$GPU_CACHE"
 printf "📦 System Cache          ✔ %d items\n" "$SYSTEM_CACHE"
 printf "⚙️ Dalvik / ART Cache    ✔ %d items\n" "$DALVIK_CACHE"
+
 echo "───────────────────────────────────────"
+
 printf "✨ Total Items Cleaned   ✔ %d\n" "$TOTAL"
+
 echo ""
 echo "🚀 Performance optimization completed."
 echo "💾 Filesystem synchronized."
+echo "⚡ Storage optimized using FSTRIM."
+
 echo ""
 echo "💡 Android will rebuild optimized"
 echo "   cache automatically after reboot."
+
 echo ""
 
 if [ "$TOTAL" -ge 1000 ]; then
-    echo "🏆 Excellent! A large amount of cache"
-    echo "   has been cleaned from your device."
+    echo "🏆 Excellent! A large amount of cache has been cleaned."
 elif [ "$TOTAL" -ge 500 ]; then
-    echo "⭐ Great! Your device has been"
-    echo "   significantly cleaned."
+    echo "⭐ Great! Your device has been significantly cleaned."
 elif [ "$TOTAL" -ge 100 ]; then
     echo "👍 Good! Unnecessary cache was removed."
 else
@@ -107,3 +154,5 @@ echo "❤️ Thank you for using SuperMario Tweaker"
 echo "👨‍💻 Developed by MRX7014"
 echo "📢 Telegram: @mrxsspace"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+exit 0

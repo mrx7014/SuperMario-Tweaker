@@ -1,13 +1,5 @@
 #!/system/bin/sh
 # SuperMario Tweaker Script
-
-until [ "$(getprop sys.boot_completed)" -eq 1 ]; do
-  sleep 5
-done
-
-RESETPROP=$(which resetprop 2>/dev/null || echo "/data/adb/magisk/resetprop")
-
-sleep 2
 if [ -d "/dev/freezer/frozen" ]; then
     chmod 777 /dev/freezer/frozen/freezer.killable 2>/dev/null
     echo 0 > /dev/freezer/frozen/freezer.killable 2>/dev/null

@@ -1,31 +1,49 @@
+########################################
 # SuperMario Tweaker
-### By: MRX7014
+# By: MRX7014
+########################################
 
-# build.prop tweaks
-
-# Faster Boot Time & Power Optimization
-ro.config.hw_power_saving=1
-ro.config.hw_fast_dormancy=1
-ro.config.hw_quickpoweron=true
-ro.mot.eri.losalert.delay=1000
-ro.ril.sensor.sleep.control=1
-
-# Tweaks
+########################################
+# Activity Manager
+########################################
 ro.sys.fw.bg_apps_limit=64
-persist.device_config.activity_manager.max_cached_processes=128
+persist.device_config.activity_manager.max_cached_processes=48
+persist.device_config.activity_manager.max_phantom_processes=2147483647
 persist.device_config.activity_manager.use_compaction=false
-ro.lmk.kill_heaviest_task=false
+persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 ro.config.max_phantom_processes=2147483647
 ro.config.max_starting_bg=32
+
+########################################
+# Process Freezer
+########################################
 ro.config.use_freezer=false
 persist.sys.freezer.enable=false
-dalvik.vm.heapgrowthlimit=128m
+
+########################################
+# Dalvik VM
+########################################
 dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=128m
 dalvik.vm.heapsize=512m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=2m
 dalvik.vm.heapmaxfree=8m
+
+########################################
+# ART / Dex Optimization
+########################################
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.ab-ota=speed-profile
+pm.dexopt.first-boot=verify
+pm.dexopt.boot-after-ota=verify
+
+########################################
+# Low Memory Killer (LMKD)
+########################################
 ro.lmk.enable_adaptive_lmk=false
+ro.lmk.use_psi=true
 ro.lmk.low=1001
 ro.lmk.medium=1001
 ro.lmk.critical=900
@@ -38,3 +56,13 @@ ro.lmk.thrashing_limit=100
 ro.lmk.thrashing_limit_decay=10
 ro.lmk.psi_partial_stall_ms=200
 ro.lmk.psi_complete_stall_ms=700
+
+########################################
+# Graphics & HWUI
+########################################
+debug.hwui.skia_atrace_enabled=false
+
+########################################
+# Device Configuration
+########################################
+ro.config.low_ram=false

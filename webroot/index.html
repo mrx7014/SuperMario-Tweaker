@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Super Mario Tweaker™ — Official Display Engine</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="floaters" aria-hidden="true">
+  <span class="coin-float c1"></span>
+  <span class="coin-float c2"></span>
+  <span class="coin-float c3"></span>
+</div>
+
+<div class="container">
+
+  <div class="section-label">
+    <span class="section-label-line"></span>
+    <span>Calibration Controls</span>
+    <span class="section-label-line"></span>
+  </div>
+
+  <!-- Preview -->
+  <div class="card card-preview">
+    <div class="card-header">
+      <div class="card-title-group">
+        <span class="icon-block card-icon">🖼</span>
+        <h3>Live Preview</h3>
+      </div>
+      <span class="hint-text">Swipe →</span>
+    </div>
+    <div class="preview-scroll">
+      <div class="preview-track">
+        <img class="pImg" src="preview0.jpg">
+        <img class="pImg" src="preview1.jpg">
+        <img class="pImg" src="preview2.jpg">
+        <img class="pImg" src="preview3.jpg">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Saturation -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <span class="icon-block card-icon">🔥</span>
+        <div>
+          <span class="card-eyebrow"></span>
+          <h3>Saturation</h3>
+        </div>
+      </div>
+      <span class="value-badge"><span id="satValue">1.5</span></span>
+    </div>
+    <input id="satSlider" type="range" min="0" max="3" step="0.01">
+    <div class="slider-scale"><span>Muted</span><span>Vivid</span></div>
+  </div>
+
+  <!-- Actions -->
+  <div class="card actions-card">
+    <button id="applyBtn" class="btn btn-primary">
+      <span class="flip-icon">
+        <span class="face-front">✓</span>
+        <span class="face-back">⚡</span>
+      </span>
+      Apply Changes
+    </button>
+    <button id="resetBtn" class="btn btn-secondary">
+      <span class="flip-icon">
+        <span class="face-front">↺</span>
+        <span class="face-back">⟲</span>
+      </span>
+      Reset to Defaults
+    </button>
+  </div>
+
+  <p class="footnote">Tweaks are applied directly through SurfaceFlinger and persist across every reboot.</p>
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-brand">
+      <div class="brand-mark small">
+        <span class="mark-star">★</span>
+      </div>
+      <span>SUPER MARIO TWEAKER</span>
+    </div>
+    <p class="footer-copy">Part of the SuperMario Tweaker performance suite.</p>
+    <div class="footer-badges">
+      <span class="footer-badge">v5.0.0</span>
+    </div>
+  </div>
+</footer>
+
+<div class="ground-scene" aria-hidden="true">
+  <div class="hill hill-1"></div>
+  <div class="hill hill-2"></div>
+  <div class="bush bush-1"></div>
+  <div class="bush bush-2"></div>
+  <div class="pipe"></div>
+  <div class="ground-strip"></div>
+</div>
+
+<div id="imgModal">
+  <img id="imgModalPic">
+</div>
+
+<div class="fab-toggle">
+  <span class="flip-icon">
+    <span class="face-front">☀</span>
+    <span class="face-back">🌙</span>
+  </span>
+</div>
+
+<div id="snackbar"></div>
+
+<div id="welcomeOverlay">
+  <div class="welcome-card">
+    <div class="welcome-flag">
+      <div class="welcome-flag-stripe welcome-flag-black"></div>
+      <div class="welcome-flag-stripe welcome-flag-white"></div>
+      <div class="welcome-flag-stripe welcome-flag-green"></div>
+      <div class="welcome-flag-triangle"></div>
+    </div>
+    <div class="welcome-body">
+      <h2 class="welcome-title">Free Palestine 🇵🇸</h2>
+      <p class="welcome-sub">Standing with the people of Palestine.</p>
+    </div>
+    <button id="welcomeCloseBtn" class="welcome-close">Continue</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="effects.js"></script>
+</body>
+</html>
