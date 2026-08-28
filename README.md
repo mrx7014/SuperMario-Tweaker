@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="assets/SMTW.jpg" alt="SuperMario Tweaker Banner" width="100%"/>
+<img src="banner.jpg" alt="SuperMario Tweaker Banner" width="100%"/>
 
 # 🍄 SuperMario Tweaker
 
 **A system-level performance module for rooted Android — smoother UI, faster apps, smarter memory management.**
 
-[![Version](https://img.shields.io/badge/Version-v5.0.0-success?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/latest)
+[![Version](https://img.shields.io/badge/Version-v5.1.0-success?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/mrx7014/SuperMario-Tweaker/total?style=for-the-badge)](https://github.com/mrx7014/SuperMario-Tweaker/releases)
 [![Android](https://img.shields.io/badge/Android-10--16-brightgreen?style=for-the-badge&logo=android)](#️-compatibility)
 [![Telegram](https://img.shields.io/badge/Telegram-MRXSSpace-229ED9?style=for-the-badge&logo=telegram)](https://t.me/mrxsspace)

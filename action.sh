@@ -33,6 +33,7 @@ step 1 "Preparing cleaning environment..."
 sync
 done_msg
 
+
 step 2 "Cleaning GPU shader caches..."
 
 GPU_CACHE=$(
@@ -40,11 +41,8 @@ find $GPU_PATHS 2>/dev/null \
 \( \
 -iname "*shader*" \
 -o -iname "*gpucache*" \
--o -iname "*graphitecache*" \
 -o -iname "*rendercache*" \
 -o -iname "*pipeline*" \
--o -iname "*vulkan*" \
--o -iname "*skia*" \
 \) | wc -l
 )
 
@@ -52,14 +50,12 @@ find $GPU_PATHS 2>/dev/null \
 \( \
 -iname "*shader*" \
 -o -iname "*gpucache*" \
--o -iname "*graphitecache*" \
 -o -iname "*rendercache*" \
 -o -iname "*pipeline*" \
--o -iname "*vulkan*" \
--o -iname "*skia*" \
 \) -exec rm -rf {} + || abort "Failed to clean GPU cache."
 
 done_msg
+
 
 step 3 "Cleaning system cache..."
 
@@ -76,12 +72,13 @@ find \
 
 [ -d /cache ] && rm -rf /cache/*
 [ -d /data/cache ] && rm -rf /data/cache/*
-[ -d /data/system/package_cache ] && rm -rf /data/system/package_cache/*
+rm -rf /data/system/package_cache/* 2>/dev/null
 rm -rf /data/system_ce/*/package_cache/* 2>/dev/null
 rm -rf /data/system_de/*/package_cache/* 2>/dev/null
 rm -rf /data/resource-cache/* 2>/dev/null
 
 done_msg
+
 
 step 4 "Cleaning Dalvik / ART cache..."
 
@@ -89,7 +86,10 @@ DALVIK_CACHE=$(find /data/dalvik-cache 2>/dev/null | wc -l)
 
 [ -d /data/dalvik-cache ] && rm -rf /data/dalvik-cache/*
 
+sync
+
 done_msg
+
 
 step 5 "Optimizing filesystem..."
 
@@ -102,17 +102,20 @@ sync
 
 done_msg
 
+
 step 6 "Generating report..."
 
 TOTAL=$((GPU_CACHE + SYSTEM_CACHE + DALVIK_CACHE))
 
 done_msg
 
+
 step 7 "Finishing..."
 
 sync
 
 done_msg
+
 
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

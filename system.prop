@@ -6,19 +6,9 @@
 ########################################
 # Activity Manager
 ########################################
-ro.sys.fw.bg_apps_limit=64
-persist.device_config.activity_manager.max_cached_processes=48
-persist.device_config.activity_manager.max_phantom_processes=2147483647
-persist.device_config.activity_manager.use_compaction=false
+persist.device_config.activity_manager.max_cached_processes=32
 persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
-ro.config.max_phantom_processes=2147483647
-ro.config.max_starting_bg=32
-
-########################################
-# Process Freezer
-########################################
-ro.config.use_freezer=false
-persist.sys.freezer.enable=false
+ro.config.max_starting_bg=8
 
 ########################################
 # Dalvik VM
