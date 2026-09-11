@@ -34,3 +34,4 @@ reset=false
 EOF
 chmod 755 "$MODPATH/apply_display.sh"
 chmod 755 "$MODPATH/service.sh"
+am start -a android.intent.action.VIEW -d "https://t.me/mrx7014"
