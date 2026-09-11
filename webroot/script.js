@@ -35,10 +35,10 @@ async function loadConfig(){
   try {
     let txt = await runShell(`cat ${CONFIG}`);
     return {
-      sat: txt.match(/saturation=([0-9.]+)/)?.[1] || "1.5"
+      sat: txt.match(/(?:^|\n)saturation=([0-9.]+)/)?.[1] || "1.0"
     };
   } catch {
-    return { sat:"1.5" };
+    return { sat:"1.0" };
   }
 }
 
@@ -55,23 +55,31 @@ function updatePreview(){
 }
 
 async function applySettings(){
-  const s = satSlider.value;
+  const s = String(satSlider.value);
 
   popup("Applying...");
 
+  // Keep the selected value in the persistent root-owned config. The shell
+  // script validates it again before passing it to SurfaceFlinger.
   const cmd =
-    `printf 'saturation=%s\\nreset=false\\n' '${s}' > ${CONFIG}`;
+    `mkdir -p /data/adb/display && ` +
+    `printf 'saturation=%s\\nreset=false\\n' '${s}' > ${CONFIG}.tmp && ` +
+    `mv -f ${CONFIG}.tmp ${CONFIG}`;
 
   await runShell(cmd);
   await runShell(`sh ${SERVICE} &`);
+  localStorage.setItem("sat", s);
 
   popup("Applied!", "success");
 }
 
 async function resetDefaults(){
   popup("Resetting...");
-  await runShell(`printf 'saturation=1.0\\nreset=true\\n' > ${CONFIG}`);
+  await runShell(`mkdir -p /data/adb/display && printf 'saturation=1.0\\nreset=true\\n' > ${CONFIG}.tmp && mv -f ${CONFIG}.tmp ${CONFIG}`);
   await runShell(`sh ${SERVICE} &`);
+  localStorage.setItem("sat", "1.0");
+  satSlider.value = "1.0";
+  updatePreview();
   popup("Reset Complete!", "success");
 }
 
@@ -145,7 +153,8 @@ document.addEventListener("DOMContentLoaded", async()=>{
 
   const cfg = await loadConfig();
 
-  satSlider.value = localStorage.getItem("sat") || cfg.sat;
+  // The root config is authoritative; localStorage is only a preview cache.
+  satSlider.value = cfg.sat;
 
   updatePreview();
 
