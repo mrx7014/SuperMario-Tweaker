@@ -1,46 +1,34 @@
-# SuperMario Tweaker v5.1.0
+# 📝 Changelog
 
-## 🚀 Major Improvements
-• Removed aggressive performance tweaks that could increase heat.
-• Improved CPU frequency scaling and idle behavior.
-• Optimized power consumption for daily usage.
-• Improved overall system stability and responsiveness.
+## 🚀 v5.1.1
 
-## 🔥 Thermal Optimization
-• Removed CPU core control bypass tweaks.
-• Reduced unnecessary background workload.
-• Improved standby efficiency and reduced idle heating.
-• Balanced performance without forcing maximum power.
+### 🐛 Fixed
+- 💾 Fixed Display Saturation reverting to `1.0` after reboot.
+- 🔄 Fixed the selected saturation value not being reapplied after restarting `SurfaceFlinger`.
+- ⚙️ Fixed the boot service not running correctly on some Root Managers.
+- 🖥️ Fixed Display settings being reset during the Android startup process.
+- 🎨 Fixed the WebUI showing an incorrect default value.
 
-## 🧠 RAM Management
-• Optimized cached process management.
-• Reduced excessive background app retention.
-• Improved LMKD configuration for better memory balance.
-• Removed unnecessary RAM keeping tweaks.
-• Improved background process handling.
+### ✨ Improved
+- 💽 Display Saturation settings are now stored persistently in:
+  `/data/adb/display/customize.txt`
+- 🔁 The selected value is automatically restored after every reboot.
+- 🚀 Added an early boot service to apply the saved Display value as soon as the data partition is available.
+- ⏱️ Added repeated retry attempts during boot to handle delayed or restarted `SurfaceFlinger` services.
+- 🛡️ Existing user settings are preserved during module updates and reinstallation.
+- 🔐 Improved configuration writing to reduce the possibility of corrupted settings.
+- 📱 Improved compatibility with Magisk, KernelSU, and APatch.
+- ⚡ WebUI now runs the apply process safely in the background without blocking the interface.
 
-## 🎮 Graphics & Rendering
-• Removed heavy SurfaceFlinger optimizations.
-• Kept safe hardware acceleration improvements.
-• Reduced unnecessary GPU workload.
-• Improved UI smoothness and rendering stability.
+### 🎚️ Display Saturation
+- 🆕 Default value on the first installation: `1.0`
+- 💾 User-selected values such as `1.3` remain saved after reboot.
+- 🔄 **Reset to Defaults** restores the value to `1.0`.
+- ✅ The WebUI now loads the actual saved value instead of relying on temporary browser storage.
 
-## ⚡ System Optimization
-• Optimized VM memory settings.
-• Adjusted swappiness for better performance balance.
-• Improved filesystem behavior.
-• Reduced unnecessary system activity and logging.
-• Improved ART/Dalvik optimization handling.
+### 📌 Notes
+- 🎛️ Select your preferred Display Saturation value from the WebUI.
+- ✅ Press **Apply Changes** to save and apply it.
+- 🔁 The selected value will remain active after restarting the device.
 
-## 🧹 Cleaner Improvements
-• Improved GPU shader cache cleaning.
-• Optimized system cache cleanup.
-• Added safer Dalvik/ART cache cleaning.
-• Added filesystem optimization using FSTRIM.
-• Improved cleaning reports and status messages.
-
-## 🛠️ Bug Fixes
-• Fixed possible overheating during idle.
-• Fixed excessive background activity.
-• Fixed unnecessary performance locks.
-• Improved long-term system stability.
+🍄 **Thank you for using SuperMario Tweaker!**
