@@ -67,7 +67,7 @@ async function applySettings(){
     `mv -f ${CONFIG}.tmp ${CONFIG}`;
 
   await runShell(cmd);
-  await runShell(`sh ${SERVICE} &`);
+  await runShell(`nohup sh ${SERVICE} >/dev/null 2>&1 &`);
   localStorage.setItem("sat", s);
 
   popup("Applied!", "success");
@@ -76,7 +76,7 @@ async function applySettings(){
 async function resetDefaults(){
   popup("Resetting...");
   await runShell(`mkdir -p /data/adb/display && printf 'saturation=1.0\\nreset=true\\n' > ${CONFIG}.tmp && mv -f ${CONFIG}.tmp ${CONFIG}`);
-  await runShell(`sh ${SERVICE} &`);
+  await runShell(`nohup sh ${SERVICE} >/dev/null 2>&1 &`);
   localStorage.setItem("sat", "1.0");
   satSlider.value = "1.0";
   updatePreview();

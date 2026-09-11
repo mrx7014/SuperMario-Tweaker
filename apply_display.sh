@@ -39,10 +39,10 @@ if [ "$RESET" = "true" ]; then
     printf 'saturation=%s\nreset=false\n' "$SATURATION" > "$tmp" && mv -f "$tmp" "$CONFIG_FILE"
 fi
 
-# SurfaceFlinger may restart several times after sys.boot_completed. Reapply
-# the saved value during the first minute so a later restart cannot erase it.
+# SurfaceFlinger may restart several times during boot. Reapply the saved
+# value for several minutes so a later framework reset cannot erase it.
 attempt=1
-while [ "$attempt" -le 20 ]; do
+while [ "$attempt" -le 60 ]; do
     if service list 2>/dev/null | grep -iq surfaceflinger; then
         service call SurfaceFlinger 1022 f "$SATURATION" >/dev/null 2>&1
     fi
